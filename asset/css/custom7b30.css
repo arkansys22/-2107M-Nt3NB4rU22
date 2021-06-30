@@ -1,0 +1,58 @@
+.story .tab-content .story-details p{
+	line-height: 1.6;
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+.story .tab-content{
+	margin-top:0px;
+}
+.couple .details .social-links{
+	margin-top:20px;
+}
+
+.hero-slider-mobile{
+	display:none !important;
+}
+.bquotes {
+    background: url(../images/quotes2.jpg) 100% 100%/cover no-repeat fixed;
+}
+footer {
+    background: url(../images/footer.jpg) 70% 10%/cover no-repeat;
+}
+.title_description{
+	margin-top:50px;
+}
+.slidetop{
+	background-position-y:20% !important; 
+}
+@media(max-width:768px){	
+	footer {
+	    background: url(../images/footer.jpg) 50% 10%/cover no-repeat;
+	}
+}
+
+@media(min-width: 1024px){
+	.row_couple{
+		display:flex;
+		align-items:center;
+	}
+}
+
+@media(max-width: 768px){
+	.hero-slider-mobile{
+		display:block !important;
+	}
+	.hero-slider-desktop{
+		display:none !important;
+	}
+	.bquotes {
+		background: url(../images/quotes2.jpg) 100% 100%/cover no-repeat;
+    	background-position-x: center;
+    	padding: 70px 0 30px;
+	}
+
+	.bquotes .bquotes-slider .text p {
+	    font-size: 25px;
+	    margin-bottom: 20px;
+	}
+}

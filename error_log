@@ -1,0 +1,83 @@
+[09-Dec-2017 12:14:13 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/manten/public_html/application/views/back/mantenbaru/about_all.php on line 24
+[12-Dec-2017 23:01:04 UTC] PHP Fatal error:  Call to a member function get_all_about() on null in /home/manten/public_html/application/controllers/admin/Pengaturans.php on line 101
+[24-Dec-2017 07:11:28 UTC] PHP Fatal error:  Call to undefined method Pengaturans::about_rules() in /home/manten/public_html/application/controllers/admin/Pengaturans.php on line 98
+[06-Jan-2018 04:22:11 UTC] PHP Fatal error:  Call to a member function get_all_pengaturan() on null in /home/manten/public_html/application/controllers/Member.php on line 388
+[06-Jan-2018 04:39:15 UTC] PHP Parse error:  syntax error, unexpected '$berita' (T_VARIABLE), expecting ',' or ';' in /home/manten/public_html/application/views/back/berita/berita_list.php on line 42
+[06-Jan-2018 04:39:50 UTC] PHP Fatal error:  Call to undefined method stdClass::judul_berita() in /home/manten/public_html/application/views/back/berita/berita_list.php on line 42
+[06-Jan-2018 04:40:47 UTC] PHP Parse error:  syntax error, unexpected 'site_url' (T_STRING) in /home/manten/public_html/application/views/back/berita/berita_list.php on line 42
+[17-Jan-2018 06:57:29 UTC] PHP Fatal error:  Call to a member function get_all_pengaturan() on null in /home/manten/public_html/application/controllers/Baru.php on line 15
+[17-Jan-2018 06:58:16 UTC] PHP Fatal error:  Call to a member function get_all_pengaturan() on null in /home/manten/public_html/application/controllers/Baru.php on line 15
+[17-Jan-2018 06:58:21 UTC] PHP Fatal error:  Call to a member function get_all_pengaturan() on null in /home/manten/public_html/application/controllers/Baru.php on line 15
+[17-Jan-2018 06:58:40 UTC] PHP Fatal error:  Call to a member function get_all_pengaturan() on null in /home/manten/public_html/application/controllers/Baru.php on line 15
+[17-Jan-2018 06:58:41 UTC] PHP Fatal error:  Call to a member function get_all_pengaturan() on null in /home/manten/public_html/application/controllers/Baru.php on line 15
+[17-Jan-2018 06:58:42 UTC] PHP Fatal error:  Call to a member function get_all_pengaturan() on null in /home/manten/public_html/application/controllers/Baru.php on line 15
+[17-Jan-2018 06:58:43 UTC] PHP Fatal error:  Call to a member function get_all_pengaturan() on null in /home/manten/public_html/application/controllers/Baru.php on line 15
+[17-Jan-2018 06:59:06 UTC] PHP Fatal error:  Call to a member function get_all_pengaturan() on null in /home/manten/public_html/application/controllers/Baru.php on line 15
+[20-Jan-2018 03:40:38 UTC] PHP Fatal error:  Call to undefined function judul_seo() in /home/manten/public_html/application/controllers/admin/Berita.php on line 100
+[21-Jan-2018 04:27:01 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:27:03 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:27:04 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:27:05 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:27:05 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:27:05 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:27:05 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:27:06 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:27:06 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:27:06 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:27:07 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:27:07 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:27:07 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:27:07 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:27:08 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:27:08 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:27:08 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:27:09 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:27:09 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:27:09 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:27:10 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:34:23 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:34:41 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:34:43 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:34:43 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:34:43 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:34:43 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:34:44 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:35:28 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:35:32 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:35:34 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:35:34 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 04:35:34 UTC] PHP Fatal error:  Call to undefined method Berita_model::delete_berita() in /home/manten/public_html/application/controllers/admin/Berita.php on line 438
+[21-Jan-2018 09:29:00 UTC] PHP Fatal error:  Call to a member function row() on null in /home/manten/public_html/application/controllers/admin/Berita.php on line 425
+[21-Jan-2018 09:29:03 UTC] PHP Fatal error:  Call to a member function row() on null in /home/manten/public_html/application/controllers/admin/Berita.php on line 425
+[21-Jan-2018 23:18:17 UTC] PHP Fatal error:  Call to undefined method CI_DB_mysqli_result::row2() in /home/manten/public_html/application/controllers/admin/Berita.php on line 424
+[21-Jan-2018 23:18:22 UTC] PHP Fatal error:  Call to undefined method CI_DB_mysqli_result::row2() in /home/manten/public_html/application/controllers/admin/Berita.php on line 424
+[21-Jan-2018 23:18:23 UTC] PHP Fatal error:  Call to undefined method CI_DB_mysqli_result::row2() in /home/manten/public_html/application/controllers/admin/Berita.php on line 424
+[21-Jan-2018 23:18:23 UTC] PHP Fatal error:  Call to undefined method CI_DB_mysqli_result::row2() in /home/manten/public_html/application/controllers/admin/Berita.php on line 424
+[21-Jan-2018 23:18:23 UTC] PHP Fatal error:  Call to undefined method CI_DB_mysqli_result::row2() in /home/manten/public_html/application/controllers/admin/Berita.php on line 424
+[21-Jan-2018 23:18:23 UTC] PHP Fatal error:  Call to undefined method CI_DB_mysqli_result::row2() in /home/manten/public_html/application/controllers/admin/Berita.php on line 424
+[21-Jan-2018 23:18:23 UTC] PHP Fatal error:  Call to undefined method CI_DB_mysqli_result::row2() in /home/manten/public_html/application/controllers/admin/Berita.php on line 424
+[21-Jan-2018 23:18:24 UTC] PHP Fatal error:  Call to undefined method CI_DB_mysqli_result::row2() in /home/manten/public_html/application/controllers/admin/Berita.php on line 424
+[21-Jan-2018 23:18:24 UTC] PHP Fatal error:  Call to undefined method CI_DB_mysqli_result::row2() in /home/manten/public_html/application/controllers/admin/Berita.php on line 424
+[21-Jan-2018 23:18:24 UTC] PHP Fatal error:  Call to undefined method CI_DB_mysqli_result::row2() in /home/manten/public_html/application/controllers/admin/Berita.php on line 424
+[21-Jan-2018 23:18:24 UTC] PHP Fatal error:  Call to undefined method CI_DB_mysqli_result::row2() in /home/manten/public_html/application/controllers/admin/Berita.php on line 424
+[21-Jan-2018 23:18:25 UTC] PHP Fatal error:  Call to undefined method CI_DB_mysqli_result::row2() in /home/manten/public_html/application/controllers/admin/Berita.php on line 424
+[11-Feb-2018 13:23:57 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/manten/public_html/application/controllers/admin/Sidebar.php on line 124
+[27-Feb-2018 00:35:51 UTC] PHP Fatal error:  Call to undefined method Sidebar::update() in /home/manten/public_html/application/controllers/admin/Sidebar.php on line 222
+[27-Feb-2018 00:36:02 UTC] PHP Fatal error:  Call to undefined method Sidebar::update() in /home/manten/public_html/application/controllers/admin/Sidebar.php on line 222
+[27-Feb-2018 00:36:06 UTC] PHP Fatal error:  Call to undefined method Sidebar::update() in /home/manten/public_html/application/controllers/admin/Sidebar.php on line 222
+[27-Feb-2018 00:36:12 UTC] PHP Fatal error:  Call to undefined method Sidebar::update() in /home/manten/public_html/application/controllers/admin/Sidebar.php on line 222
+[27-Feb-2018 01:20:53 UTC] PHP Fatal error:  Call to undefined method Sidebar::update() in /home/manten/public_html/application/controllers/admin/Sidebar.php on line 222
+[27-Feb-2018 01:21:30 UTC] PHP Fatal error:  Call to undefined method Sidebar::update() in /home/manten/public_html/application/controllers/admin/Sidebar.php on line 222
+[27-Feb-2018 01:21:50 UTC] PHP Fatal error:  Call to undefined method Sidebar::update() in /home/manten/public_html/application/controllers/admin/Sidebar.php on line 222
+[27-Feb-2018 01:22:02 UTC] PHP Fatal error:  Call to undefined method Sidebar::update() in /home/manten/public_html/application/controllers/admin/Sidebar.php on line 222
+[27-Feb-2018 01:22:14 UTC] PHP Fatal error:  Call to undefined method Sidebar::update() in /home/manten/public_html/application/controllers/admin/Sidebar.php on line 222
+[27-Feb-2018 01:33:15 UTC] PHP Fatal error:  Call to undefined method Sidebar::update() in /home/manten/public_html/application/controllers/admin/Sidebar.php on line 222
+[27-Feb-2018 01:33:22 UTC] PHP Fatal error:  Call to undefined method Sidebar::update() in /home/manten/public_html/application/controllers/admin/Sidebar.php on line 222
+[27-Feb-2018 01:33:40 UTC] PHP Fatal error:  Call to undefined method Sidebar::update() in /home/manten/public_html/application/controllers/admin/Sidebar.php on line 222
+[27-Feb-2018 01:34:53 UTC] PHP Fatal error:  Call to undefined method Sidebar::update() in /home/manten/public_html/application/controllers/admin/Sidebar.php on line 222
+[27-Feb-2018 01:35:03 UTC] PHP Fatal error:  Call to undefined method Sidebar::update() in /home/manten/public_html/application/controllers/admin/Sidebar.php on line 222
+[27-Feb-2018 01:38:49 UTC] PHP Fatal error:  Call to undefined method Sidebar::update() in /home/manten/public_html/application/controllers/admin/Sidebar.php on line 222
+[27-Feb-2018 01:38:57 UTC] PHP Fatal error:  Call to undefined method Sidebar::update() in /home/manten/public_html/application/controllers/admin/Sidebar.php on line 222
+[27-Feb-2018 01:41:50 UTC] PHP Fatal error:  Call to undefined method Sidebar::update() in /home/manten/public_html/application/controllers/admin/Sidebar.php on line 222
+[27-Feb-2018 05:47:02 UTC] PHP Fatal error:  Call to undefined method CI_DB_mysqli_result::row2() in /home/manten/public_html/application/controllers/admin/Sidebar.php on line 306
+[27-Feb-2018 05:47:04 UTC] PHP Fatal error:  Call to undefined method CI_DB_mysqli_result::row2() in /home/manten/public_html/application/controllers/admin/Sidebar.php on line 306
