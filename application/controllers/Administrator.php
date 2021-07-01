@@ -126,7 +126,7 @@ class Administrator extends CI_Controller {
             $this->load->library('upload', $config);
             $this->upload->do_upload('j');
             $hasil=$this->upload->data();
-            
+
             $config['upload_path'] = 'asset/images/';
             $config['allowed_types'] = 'gif|jpg|png|ico';
             $config['max_size'] = '500'; // kb
@@ -350,7 +350,7 @@ class Administrator extends CI_Controller {
 		$this->model_app->delete('halamanstatis',$id);
 		redirect('administrator/halamanbaru');
 	}
-	
+
     // Controller Modul Kategori
 
 	function kategoris(){
@@ -416,7 +416,7 @@ class Administrator extends CI_Controller {
         }else{
             $data['record'] = $this->model_app->view_where_ordering('vendor_tbl',array('username'=>$this->session->username),'id_berita','DESC');
         }
-       
+
 		$this->template->load('administrator/template','administrator/mod_service/views',$data);
 	}
 	function tambah_listservice(){
@@ -700,7 +700,7 @@ class Administrator extends CI_Controller {
 		$this->model_app->update('vendor_tbl', $data, $where);
 		redirect('administrator/listservice');
 	}
-	
+
 	function listundangan(){
 		cek_session_akses('listundangan',$this->session->id_session);
 				if ($this->session->level=='admin'){
@@ -900,7 +900,7 @@ class Administrator extends CI_Controller {
 		$this->model_app->update('undangan_tbl', $data, $where);
 		redirect('administrator/listundangan');
 	}
-	
+
 	function listinvestasi(){
 		cek_session_akses('listinvestasi',$this->session->id_session);
 				if ($this->session->level=='admin'){
@@ -908,7 +908,7 @@ class Administrator extends CI_Controller {
 				}else{
 						$data['record'] = $this->model_app->view_where_ordering('investasi_tbl',array('username'=>$this->session->username),'id_berita','DESC');
 				}
-				
+
 		$this->template->load('administrator/template','administrator/mod_investasi/views',$data);
 	}
 	function tambah_listinvestasi(){
@@ -1103,7 +1103,7 @@ class Administrator extends CI_Controller {
 		$this->model_app->delete('investasi_tbl',$id);
 		redirect('administrator/listinvestasi');
 	}
-	
+
 	function listblog(){
 		cek_session_akses('listblog',$this->session->id_session);
 				if ($this->session->level=='admin'){
@@ -1111,7 +1111,7 @@ class Administrator extends CI_Controller {
 				}else{
 						$data['record'] = $this->model_app->view_where_ordering('blogs_tbl',array('username'=>$this->session->username),'id_berita','DESC');
 				}
-				
+
 		$this->template->load('administrator/template','administrator/mod_blog/views',$data);
 	}
 	function tambah_listblog(){
@@ -1289,7 +1289,7 @@ class Administrator extends CI_Controller {
 		$this->model_app->delete('blogs_tbl',$id);
 		redirect('administrator/listblog');
 	}
-	
+
 	function listpromo(){
 		cek_session_akses('listpromo',$this->session->id_session);
 				if ($this->session->level=='admin'){
@@ -2996,32 +2996,32 @@ class Administrator extends CI_Controller {
             $hasil=$this->upload->data();
             if ($hasil['file_name']=='' AND $this->input->post('b') ==''){
                     $data = array('username'=>$this->db->escape_str($this->input->post('a')),
-                                    'nama_lengkap'=>$this->db->escape_str($this->input->post('c')),
+                                    'namadepan'=>$this->db->escape_str($this->input->post('c')),
                                     'email'=>$this->db->escape_str($this->input->post('d')),
                                     'no_telp'=>$this->db->escape_str($this->input->post('e')),
-                                    'blokir'=>$this->db->escape_str($this->input->post('h')));
+                                    'aktivasi'=>$this->db->escape_str($this->input->post('h')));
             }elseif ($hasil['file_name']!='' AND $this->input->post('b') ==''){
                     $data = array('username'=>$this->db->escape_str($this->input->post('a')),
-                                    'nama_lengkap'=>$this->db->escape_str($this->input->post('c')),
+                                    'namadepan'=>$this->db->escape_str($this->input->post('c')),
                                     'email'=>$this->db->escape_str($this->input->post('d')),
                                     'no_telp'=>$this->db->escape_str($this->input->post('e')),
                                     'foto'=>$hasil['file_name'],
-                                    'blokir'=>$this->db->escape_str($this->input->post('h')));
+                                    'aktivasi'=>$this->db->escape_str($this->input->post('h')));
             }elseif ($hasil['file_name']=='' AND $this->input->post('b') !=''){
                     $data = array('username'=>$this->db->escape_str($this->input->post('a')),
                                     'password'=>hash("sha512", md5($this->input->post('b'))),
-                                    'nama_lengkap'=>$this->db->escape_str($this->input->post('c')),
+                                    'namadepan'=>$this->db->escape_str($this->input->post('c')),
                                     'email'=>$this->db->escape_str($this->input->post('d')),
                                     'no_telp'=>$this->db->escape_str($this->input->post('e')),
-                                    'blokir'=>$this->db->escape_str($this->input->post('h')));
+                                    'aktivasi'=>$this->db->escape_str($this->input->post('h')));
             }elseif ($hasil['file_name']!='' AND $this->input->post('b') !=''){
                     $data = array('username'=>$this->db->escape_str($this->input->post('a')),
                                     'password'=>hash("sha512", md5($this->input->post('b'))),
-                                    'nama_lengkap'=>$this->db->escape_str($this->input->post('c')),
+                                    'namadepan'=>$this->db->escape_str($this->input->post('c')),
                                     'email'=>$this->db->escape_str($this->input->post('d')),
                                     'no_telp'=>$this->db->escape_str($this->input->post('e')),
                                     'foto'=>$hasil['file_name'],
-                                    'blokir'=>$this->db->escape_str($this->input->post('h')));
+                                    'aktivasi'=>$this->db->escape_str($this->input->post('h')));
             }
             $where = array('username' => $this->input->post('id'));
             $this->model_app->update('users', $data, $where);
@@ -3049,11 +3049,18 @@ class Administrator extends CI_Controller {
 	}
 	function delete_manajemenuser(){
         cek_session_akses('manajemenuser',$this->session->id_session);
-		$id = array('username' => $this->uri->segment(3));
-        $this->model_app->delete('users',$id);
-		redirect('administrator/manajemenuser');
+				$id = $this->uri->segment(3);
+				$_id = $this->db->get_where('users',['username' => $id])->row();
+				$query = $this->db->delete('users',['username'=> $id]);
+				$_id2 = $this->db->get_where('users_bisnis',['username' => $id])->row();
+				$query2 = $this->db->delete('users_bisnis',['username'=> $id]);
+				if($query AND $query2){
+								 unlink("./asset/foto_user/".$_id->foto);
+								 unlink("./asset/gambar_bisnis/".$_id2->gambar);
+			 }
+			 redirect('administrator/manajemenuser');
 	}
-    function delete_akses(){
+  function delete_akses(){
         cek_session_admin();
         $id = array('id_umod' => $this->uri->segment(3));
         $this->model_app->delete('users_modul',$id);
