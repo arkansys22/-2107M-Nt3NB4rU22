@@ -58,7 +58,7 @@
                         </div>
                         <div class="title hotel-middle clearfix cell-view">
                           <p><?php echo $post_new[nama_kategori]?> <?php echo $post_new[nama]?>
-                            <br><?php echo $post_new[harga_spec]?><?php echo number_format($post_new[harga],0,',','.')?>
+                            <br><?php echo $post_new[harga_spec]?> Rp. <?php echo number_format($post_new[harga],0,',','.')?>
                           </p>
                           <div class="judul_content">
                             <h4><strong><?php echo $post_new[namabisnis]?></strong></h4>
