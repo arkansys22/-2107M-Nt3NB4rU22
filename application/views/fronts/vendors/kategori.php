@@ -14,32 +14,6 @@
     <div class="list-wrapper bg-grey-2">
       <div class="container">
         <div class="row">
-          <div class="col-xs-12 col-sm-4 col-md-3">
-            <div class="sidebar bg-white clearfix">
-            <div class="sidebar-block">
-              <h4 class="sidebar-title color-dark-2">categories</h4>
-              <ul class="sidebar-category color-1">
-                <li class="active">
-                  <?php $jmla = $this->model_app->view('users_bisnis')->num_rows(); ?>
-                  <a class="cat-drop" href="#">Vendor<span class="fr">(<?php echo $jmla; ?>)</span></a>
-                  <ul>
-                      <?php $no = 1; foreach ($post_kategori as $post_k) {  ?>
-                    <li><a href="<?php echo base_url()?>vendors/kategori/<?php echo $post_k->kategori_seo?>"><?php echo $post_k->nama_kategori?></a></li>
-                    <?php } ?>
-                  </ul>
-                </li>
-                <li><?php $jmlaa = $this->model_app->view('blogs_tbl')->num_rows(); ?>
-                <a class="cat-drop" href="#">Artikel<span class="fr">(<?php echo $jmlaa; ?>)</span></a>
-                  <ul>
-                    <li><a href="<?php echo base_url()?>artikel/kategori/tips-hubungan">Tips Hubungan</a></li>
-                    <li><a href="<?php echo base_url()?>artikel/kategori/inspirasi-pernikahan">Inspirasi Pernikahan</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-
-            </div>
-          </div>
           <div class="col-xs-12 col-sm-8 col-md-9">
             <div class="grid-content clearfix">
               <?php
@@ -77,6 +51,32 @@
                         <?php  echo $this->pagination->create_links();  ?>
                  </div>
 						</div>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-3">
+            <div class="sidebar bg-white clearfix">
+            <div class="sidebar-block">
+              <h4 class="sidebar-title color-dark-2">categories</h4>
+              <ul class="sidebar-category color-1">
+                <li class="active">
+                  <?php $jmla = $this->model_app->view('users_bisnis')->num_rows(); ?>
+                  <a class="cat-drop" href="#">Vendor<span class="fr">(<?php echo $jmla; ?>)</span></a>
+                  <ul>
+                      <?php $no = 1; foreach ($post_kategori as $post_k) {  ?>
+                    <li><a href="<?php echo base_url()?>vendors/kategori/<?php echo $post_k->kategori_seo?>"><?php echo $post_k->nama_kategori?></a></li>
+                    <?php } ?>
+                  </ul>
+                </li>
+                <li><?php $jmlaa = $this->model_app->view('blogs_tbl')->num_rows(); ?>
+                <a class="cat-drop" href="#">Artikel<span class="fr">(<?php echo $jmlaa; ?>)</span></a>
+                  <ul>
+                    <li><a href="<?php echo base_url()?>artikel/kategori/tips-hubungan">Tips Hubungan</a></li>
+                    <li><a href="<?php echo base_url()?>artikel/kategori/inspirasi-pernikahan">Inspirasi Pernikahan</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            </div>
           </div>
         </div>
       </div>
