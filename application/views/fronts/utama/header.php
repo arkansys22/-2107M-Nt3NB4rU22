@@ -7,9 +7,7 @@
           <img src="<?php echo base_url()?>asset/frontend/aspanel/img/phone_icon_blue.png" alt="">
             <a class="color-dark-2-light" href="tel:<?=$identitas->no_telp ?>">Whatsapp: <?=$identitas->no_telp ?></a>
         </div>
-        <div class="top-header-block fl phone">
-          
-        </div>
+        <br>
         <div class="fr">
           <div class="top-header-block fl card">
             <img src="<?php echo base_url()?>asset/frontend/aspanel/img/mail_icon_blue.png" alt="">
