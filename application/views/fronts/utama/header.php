@@ -1,4 +1,14 @@
 <header class="type-4 hovered color-10"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <div class="top-header-bar bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+        
+
+            </div>
+        </div>
+    </div>
+  </div>
  <div class="container">
     <div class="row">
        <div class="col-md-12">
