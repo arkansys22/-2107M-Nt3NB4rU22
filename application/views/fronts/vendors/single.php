@@ -24,7 +24,7 @@
   				<div class="sidebar bg-white clearfix">
 						<div class="sidebar-block">
 										<div class="hotel-small style-2 clearfix">
-										     <img class="img-responsive noborder hotel-img" <?php if(empty($post_v->gambar)) {echo "<img src='".base_url()."asset/frontend/noimage.png'>";}
+										     <img class="img-responsive noborder hotel-img" <?php if(empty($post_v->gambar)) {echo "<img src='".base_url()."asset/frontend/noimages.jpg'>";}
                                                          			        else { echo " <img src='".base_url()."asset/gambar_bisnis/".$post_v->gambar."'> ";}
                                                          			        ?>
 
