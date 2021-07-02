@@ -1,21 +1,4 @@
 <header class="type-4 hovered color-10"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
- <div class="top-header-bar bg-white">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-        <div class="top-header-block fl e-mail">
-          <img src="<?php echo base_url()?>asset/frontend/aspanel/img/phone_icon_blue.png" alt="">
-            <a class="color-dark-2-light" href="tel:<?=$identitas->no_telp ?>">Whatsapp: <?=$identitas->no_telp ?></a>
-        </div>
-          <div class="top-header-block fl card">
-            <img src="<?php echo base_url()?>asset/frontend/aspanel/img/mail_icon_blue.png" alt="">
-            <a class="color-dark-2-light" href="mailto:<?=$identitas->email ?>"><?=$identitas->email ?></a>
-          </div>
-
-            </div>
-        </div>
-    </div>
-  </div>
  <div class="container">
     <div class="row">
        <div class="col-md-12">
