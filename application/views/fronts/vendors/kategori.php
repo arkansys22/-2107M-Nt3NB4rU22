@@ -48,25 +48,25 @@
                               $jdl = character_limiter($post_new->judul,240);
               ?>
               <div class="list-item-entry">
+                <a href="<?php echo base_url("vendors/$post_new[namabisnis_seo]") ?>">
                   <div class="hotel-item style-3 bg-white">
                     <div class="table-view">
                         <div class="radius-top cell-view">
-                          <img <?php if(empty($post_new[gambar])) {echo "<img src='".base_url()."asset/frontend/noimage.png'>";}
+                          <img <?php if(empty($post_new[gambar])) {echo "<img src='".base_url()."asset/frontend/noimages.jpg'>";}
                                                   else { echo " <img src='".base_url()."asset/gambar_bisnis/".$post_new[gambar]."'> ";}
                                                   ?>
                         </div>
                         <div class="title hotel-middle clearfix cell-view">
-                          <div class="date list-hidden"><strong><?php echo $post_new[nama_kategori]?> <?php echo $post_new[nama]?></strong></div>
-                            <h4><b><?php echo $post_new[namabisnis]?></b></h4>
-                                 <div class="rate-wrap">
-                                    <i>Harga Mulai dari <?php echo number_format($post_new[harga],0,',','.')?></i>
-                                  </div>
-                        </div>
-                        <div class="title hotel-right clearfix cell-view">
-                            <a href="<?php echo base_url("vendors/$post_new[namabisnis_seo]") ?>" class="c-button bg-dr-blue hv-dr-blue-o b-50 fl">Lihat Lengkapnya</a>
+                          <p><?php echo $post_new[nama_kategori]?> <?php echo $post_new[nama]?>
+                            <br><?php echo $post_new[harga_spec]?><?php echo number_format($post_new[harga],0,',','.')?>
+                          </p>
+                          <div class="judul_content">
+                            <h4><strong><?php echo $post_new[namabisnis]?></strong></h4>
+                            </div>
                         </div>
                       </div>
                   </div>
+                </a>
               </div>
               <?php } ?>
 
