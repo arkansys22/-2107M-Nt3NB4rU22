@@ -9,9 +9,9 @@
     <div class="inner-banner">
   		<img class="center-image" src="<?php echo base_url()?>asset/frontend/aspanel/img/bghead.jpg" alt="">
   	</div>
-  	
-  
-  
+
+
+
   <div class="list-wrapper ">
   		<div class="container">
   			<ul class="list-breadcrumb clearfix">
@@ -27,7 +27,7 @@
 										     <img class="img-responsive noborder hotel-img" <?php if(empty($post_v->gambar)) {echo "<img src='".base_url()."asset/frontend/noimage.png'>";}
                                                          			        else { echo " <img src='".base_url()."asset/gambar_bisnis/".$post_v->gambar."'> ";}
                                                          			        ?>
-											
+
 											<div class="tour-layer delay-1"></div>
 											<div class="hotel-desc">
 													<span class="color-dark-2-light"><strong><span><?php echo $post_v->namabisnis?></span></strong></span>
@@ -36,17 +36,7 @@
 
 											</div>
 										</div>
-										<div class="rate">
-												<span class="fa fa-star color-yellow"></span>
-												<span class="fa fa-star color-yellow"></span>
-												<span class="fa fa-star color-yellow"></span>
-												<span class="fa fa-star color-yellow"></span>
-												<span class="fa fa-star color-yellow"></span>
-												<span>(Fitur segera)</span>
-										</div>
 											<div class="contact-line"><p><i class="fa fa-map-marker"></i><a href="#"> <?php echo $post_v->nama_kec?> - <?php echo $post_v->nama?></p></a></div>
-											<div class="contact-line"><p><i class="fa fa-envelope-o"></i><a href="mailto:<?php echo $post_v->email?>"> <?php echo $post_v->email?></p></a></div>
-											<a href="mailto:<?php echo $post_v->nomerbisnis?>"><div class="contact-line"><p><i class="fa fa-phone"></i> <?php echo $post_v->nomerbisnis?></p></div></a>
 											<div class="contact-line"><p><strong>Media Sosial</strong></p></div>
 											<div class="contact-line">
 												<a target="_blank" href="https://api.whatsapp.com/send?phone=+62<?php echo $post_v->nowhatsapp?>&text=Halo,%20Saya%20menemukan%20<?php echo $post_v->namabisnis?>%20di%20Mantenbaru.com.%20Bisa%20bantu%20saya?" class="button-s-2 bg-4 m-right"><i class="fa fa-whatsapp"> WA</i></a>
@@ -56,7 +46,7 @@
 											</div>
 											<hr>
 											<div class="contact-line">
-												<center><a href="https://api.whatsapp.com/send?phone=+62<?php echo $post_v->nowhatsapp?>&text=Halo,%20Saya%20menemukan%20<?php echo $post_v->namabisnis?>%20di%20Mantenbaru.com.%20Saya%20mau%20tanya-tanya%20dulu." class="c-button small bg-dr-blue-2 hv-dr-blue-2-o"><i class="fa fa-comments-o"> Kirim Penawaran</i></a></center>
+												<center><a href="https://api.whatsapp.com/send?phone=+62<?php echo $post_v->nowhatsapp?>&text=Halo,%20Saya%20menemukan%20<?php echo $post_v->namabisnis?>%20di%20Mantenbaru.com.%20Saya%20mau%20tanya-tanya%20dulu." class="c-button small bg-dr-blue-2 hv-dr-blue-2-o"><i class="fa fa-comments-o"> Konsultasi Free</i></a></center>
 											</div>
 											<br>
 											<div class="row contact-line">
@@ -70,10 +60,10 @@
 											<hr>
 											<div class="share clearfix">
 											   <div class="contact-line"><p><strong>Bagikan :</strong></p></div>
-                                            
+
                                               <p></p><li class="color-fb"><a href="http://www.facebook.com/sharer.php?u=<?php echo base_url("vendors/$post_v->namabisnis_seo ") ?>" onclick="window.open('http://www.facebook.com/sharer.php?u=<?php echo base_url("vendors/$post_v->namabisnis_seo ")?>','newwindow','width=400,height=350');  return false;" title="Facebook" target="_blank" ><i class="fa fa-facebook" ></i>Facebook</a></li>
                                               <li class="color-ig"><a href="whatsapp://send?text=Produk terbaik <?php echo $post_v->namabisnis ?> kini ada di Mantenbaru.com. Klik <?php echo base_url("vendors/$post_v->namabisnis_seo ") ?> untuk info lebih lanjut"><i class="fa fa-whatsapp"></i>Whatsapp</a></li>
-                                                
+
                                             </div>
 					    </div>
   				    </div>
@@ -106,7 +96,7 @@
 																		  <div class="swiper-wrapper">
 																		      <?php $no = 1; foreach ($post_projek as $post_p) {
 																		          if ($post_v->username == $post_p->username){
-																		      
+
 																		      echo "<div class='swiper-slide'>
 																		          <div class='hotel-item'>
 																		            <a href='".base_url()."projek-detail/$post_p->judul_seo'>
@@ -114,7 +104,7 @@
     																		          	     if(empty($post_p->foto1)) {
     																		          	     echo "<img class='img-responsive img-full' src='".base_url()."asset/frontend/noimage.png'>";}
                                                                              			        else { echo "<img class='img-responsive img-full' src='".base_url()."asset/projek/$post_p->foto1'> "; }
-                                                                             			     
+
     																		          	 echo "</div>
     																		          	 <div class='title clearfix'>
     																		          	    <h5><b>$post_p->judul</b></h5>
@@ -136,12 +126,12 @@
 							 						<div class="tab-info">
 														<div class="tour-item-grid row">
                                                         <?php $no = 1; foreach ($post_harga as $post_h) {  ?>
-                                                        
+
 											 				<?php if ($post_v->username == $post_h->username){ ?>
 															<div class="col-mob-12 col-xs-6 col-sm-6 col-md-6 clear-xs-2">
 											 					<div class="tour-item style-2">
 											 						<div class="radius-top">
-											 						 	
+
 											 						 	<img class="img-responsive img-full" <?php if(empty($post_h->foto_h)) {echo "<img src='".base_url()."asset/frontend/noimage.png'>";}
                                                          			        else { echo " <img src='".base_url()."asset/harga/".$post_h->foto_h."'> ";}
                                                          			        ?>
@@ -153,10 +143,10 @@
 											 					 	</div>
 											 					</div>
 											 				</div>
-											 				
+
 											 				<?php } ?>
 											 			<?php } ?>
-											 				
+
 											 			</div>
 							 						</div>
 							 						<div class="tab-info">
@@ -213,7 +203,7 @@
   	</div>
 	    </div>
 	</div>
-	
+
 
   <?php $this->load->view('fronts/utama/footer')?>
   <?php $this->load->view('fronts/utama/js')?>

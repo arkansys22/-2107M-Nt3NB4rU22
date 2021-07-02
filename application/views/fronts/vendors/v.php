@@ -45,28 +45,32 @@
             <div class="grid-content clearfix">
               <?php
                     foreach ($post_bisnis as $posts) {
-                             
+
               ?>
               <div class="list-item-entry">
+                <a href="<?php echo base_url("vendors/$posts->namabisnis_seo ") ?>">
                   <div class="hotel-item style-3 bg-white">
                     <div class="table-view">
                         <div class="radius-top cell-view">
-                          <img <?php if(empty($posts->gambar)) {echo "<img src='".base_url()."asset/frontend/noimage.png'>";}
-                                                  else { echo " <img src='".base_url()."asset/gambar_bisnis/".$posts->gambar."'> ";}
+                          <img <?php if(empty($posts->gambar)) {echo "<img  src='".base_url()."asset/frontend/noimages.jpg'>";}
+                                                  else { echo " <img  src='".base_url()."asset/gambar_bisnis/".$posts->gambar."'> ";}
                                                   ?>
                         </div>
                         <div class="title hotel-middle clearfix cell-view">
-                          <div class="date list-hidden"><strong><?php echo $posts->nama_kategori?> <?php echo $posts->nama?></strong></div>
-                            <h4><b><?php echo $posts->namabisnis?></b></h4>
-                                 <div class="rate-wrap">
-                                    <i><?php echo $posts->harga_spec?> <?php echo number_format($posts->harga,0,',','.')?></i>
-                                  </div>
+
+                            <p><?php echo $posts->nama_kategori?> <?php echo $posts->nama?>
+                              <br>
+                              <?php echo $posts->harga_spec?> Rp. <?php echo number_format($posts->harga,0,',','.')?>
+                            </p>
+                            <div class="judul_content">
+                              <h4><strong><?php echo $posts->namabisnis?></strong></h4>
+                              </div>
+
                         </div>
-                        <div class="title hotel-right clearfix cell-view">
-                            <a href="<?php echo base_url("vendors/$posts->namabisnis_seo ") ?>" class="c-button bg-dr-blue hv-dr-blue-o b-50 fl">Lihat Lengkapnya</a>
-                        </div>
+                        <br>
                       </div>
                   </div>
+                  </a>
               </div>
               <?php } ?>
 
