@@ -105,6 +105,11 @@
                                                 				                    		 <img class="img-responsive img-full" <?php if(empty($post_v->foto5)) {echo "";}
                                                                          			        else { echo " <img src='".base_url()."asset/projek/".$post_v->foto5."'> ";}
                                                                          			    ?>
+                                                                                  <?php if(empty($post_v->youtube)){ echo "";}else{?>
+                                                                                  <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $post_v->youtube ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                                                                                    </iframe>
+                                                                                  <?php }?>
+
                                                 							</div>
                                                 						</div>
                                                 						<h4 class="blog-list-title"><?php echo $post_v->judul?></h4>
