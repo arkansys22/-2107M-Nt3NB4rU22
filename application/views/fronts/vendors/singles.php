@@ -16,7 +16,7 @@
 
     <meta property="og:site_name" content="<?php echo $identitas->nama_website?>">
     <meta property="og:title" content="<?php echo $post_v->judul?> <?php echo $post_v->namabisnis?> <?php echo $post_v->nama_kategori?> <?php echo $post_v->nama?> | <?php echo $identitas->nama_website?>">
-    <meta property="og:description" content="<?php echo $post_v->>meta_deskripsi ?>">
+    <meta property="og:description" content="<?php echo $post_v->meta_deskripsi ?>">
     <meta property="og:url" content="<?php echo base_url()?>projek-detail/<?php echo $post_v->judul_seo ?>">
     <meta property="og:image" content="<?php echo base_url()?>asset/projek/<?php echo $post_v->foto1?>">
     <meta property="og:image:url" content="<?php echo base_url()?>asset/projek/<?php echo $post_v->foto1?>">
