@@ -66,9 +66,9 @@ class User extends CI_Controller {
 						$data['title'] = 'Periksa kembali email dan password Anda!';
 						redirect(site_url('daftar'));
 						}else{
-						   
-						   
-						   
+
+
+
 			              	$saltid   = md5($email);
 							$aktivasi   = 0;
 							$data = array('username'=>$this->db->escape_str($this->input->post('username')),
@@ -84,18 +84,18 @@ class User extends CI_Controller {
 															'level'=>$this->db->escape_str($this->input->post('kategori')),
 															'blokir'=>'N',
 															'id_session'=>md5($this->input->post('a')).'-'.date('YmdHis'));
-															
+
 							$data2 = array('username'=>$this->db->escape_str($this->input->post('username')));
-							
-							
+
+
 							if($this->model_app->insert('users',$data) AND $this->model_app->insert('users_bisnis',$data2))
-							
+
 							{
 								if($this->sendemail($email, $saltid,$username))
                   				    {
                 			            $this->session->set_flashdata('msg','<div class="alert bg-5 text-center">Segera lakukan aktivasi akun mantenbaru dari email anda. Harap merefresh pesan masuk di email Anda.</div>');
                 			            redirect(base_url('daftar')
-                			            
+
                 			            );
                  					}else
                   				    {
@@ -148,9 +148,9 @@ class User extends CI_Controller {
 					$this->session->set_flashdata('msg','<div class="alert bg-3 text-center">Ops. Anda gagal, silahkan coba lagi.</div>');
 					redirect(base_url('login'));
 				}
-		}	
-    
-    
+		}
+
+
 	function home(){
 					if ($this->session->level=='admin'){
 				$this->template->load('administrator/template','administrator/view_home_admin');
@@ -205,11 +205,11 @@ class User extends CI_Controller {
 							if($query){
 					                unlink("asset/foto_user/".$_image->foto);
 					      }
-									
+
 							}
 							$where = array('id_users' => $this->input->post('id'));
 							$this->model_app->update('users',$data,$where);
-						
+
 							redirect('user/home/'.$this->input->post('id'));
 						}else{
 							if ($this->session->id_users==$this->uri->segment(3) OR $this->session->level=='vendor'){
@@ -232,7 +232,7 @@ class User extends CI_Controller {
 						}
 
 		}
-		
+
 	function projek(){
 			cek_session_akses2('hargas',$this->session->id_session);
 			$data['identitas']= $this->model_app->get_by_id_identitas($id='1');
@@ -246,32 +246,68 @@ class User extends CI_Controller {
 			cek_session_akses2('projek',$this->session->id_session);
 						if (isset($_POST['submit']))
 						{
-
-
 							$config['upload_path'] = 'asset/projek/';
-	            $config['allowed_types'] = 'gif|jpg|png|JPG|JPEG';
-	            $config['max_size'] = '1000'; // kb
-	            $this->load->library('upload', $config);
+							$config['allowed_types'] = 'gif|jpg|png|JPG|JPEG';
 
-	            $this->upload->do_upload('foto1');
-	            $hasil=$this->upload->data();
+							$this->upload->initialize($config);
+							$this->upload->do_upload('foto1');
+							$hasil=$this->upload->data();
+							$config['image_library']='gd2';
 							$config['source_image'] = 'asset/projek/'.$hasil['file_name'];
+							$config['create_thumb']= FALSE;
+							$config['maintain_ratio']= FALSE;
+							$config['quality']= '80%';
+							$config['new_image']= 'asset/projek/'.$hasil['file_name'];
+							$this->load->library('image_lib', $config);
+							$this->image_lib->resize();
 
+							$this->upload->initialize($config);
 							$this->upload->do_upload('foto2');
-	            $hasil2=$this->upload->data();
+							$hasil2=$this->upload->data();
+							$config['image_library']='gd2';
 							$config['source_image'] = 'asset/projek/'.$hasil2['file_name'];
+							$config['create_thumb']= FALSE;
+							$config['maintain_ratio']= FALSE;
+							$config['quality']= '80%';
+							$config['new_image']= 'asset/projek/'.$hasil2['file_name'];
+							$this->load->library('image_lib', $config);
+							$this->image_lib->resize();
 
+							$this->upload->initialize($config);
 							$this->upload->do_upload('foto3');
-	            $hasil3=$this->upload->data();
+							$hasil3=$this->upload->data();
+							$config['image_library']='gd2';
 							$config['source_image'] = 'asset/projek/'.$hasil3['file_name'];
+							$config['create_thumb']= FALSE;
+							$config['maintain_ratio']= FALSE;
+							$config['quality']= '80%';
+							$config['new_image']= 'asset/projek/'.$hasil3['file_name'];
+							$this->load->library('image_lib', $config);
+							$this->image_lib->resize();
 
+							$this->upload->initialize($config);
 							$this->upload->do_upload('foto4');
-	            $hasil4=$this->upload->data();
+							$hasil4=$this->upload->data();
+							$config['image_library']='gd2';
 							$config['source_image'] = 'asset/projek/'.$hasil4['file_name'];
+							$config['create_thumb']= FALSE;
+							$config['maintain_ratio']= FALSE;
+							$config['quality']= '80%';
+							$config['new_image']= 'asset/projek/'.$hasil4['file_name'];
+							$this->load->library('image_lib', $config);
+							$this->image_lib->resize();
 
+							$this->upload->initialize($config);
 							$this->upload->do_upload('foto5');
-	            $hasil5=$this->upload->data();
+							$hasil5=$this->upload->data();
+							$config['image_library']='gd2';
 							$config['source_image'] = 'asset/projek/'.$hasil5['file_name'];
+							$config['create_thumb']= FALSE;
+							$config['maintain_ratio']= FALSE;
+							$config['quality']= '80%';
+							$config['new_image']= 'asset/projek/'.$hasil5['file_name'];
+							$this->load->library('image_lib', $config);
+							$this->image_lib->resize();
 
 							if ($hasil['file_name']=='' && $hasil2['file_name']=='' && $hasil3['file_name']=='' && $hasil4['file_name']=='' && $hasil5['file_name']==''){
 								$data = array(
@@ -281,8 +317,8 @@ class User extends CI_Controller {
 									'youtube'=>$this->input->post('youtube'),
 									'deskripsi'=>$this->input->post('deskripsi'),
 									'hari'=>hari_ini(date('w')),
-                                    'tanggal'=>date('Y-m-d'),
-                                    'jam'=>date('H:i:s'),
+                  'tanggal'=>date('Y-m-d'),
+                  'jam'=>date('H:i:s'),
 									'meta_deskripsi'=>$this->input->post('meta_deskripsi'),
 									'keyword'=>$this->input->post('keyword'));
 								}elseif ($hasil2['file_name']=='' && $hasil3['file_name']=='' && $hasil4['file_name']=='' && $hasil5['file_name']==''){
@@ -294,8 +330,8 @@ class User extends CI_Controller {
 										'foto1'=>$hasil['file_name'],
 										'deskripsi'=>$this->input->post('deskripsi'),
 										'hari'=>hari_ini(date('w')),
-                                        'tanggal'=>date('Y-m-d'),
-                                        'jam'=>date('H:i:s'),
+                    'tanggal'=>date('Y-m-d'),
+                    'jam'=>date('H:i:s'),
 										'meta_deskripsi'=>$this->input->post('meta_deskripsi'),
 										'keyword'=>$this->input->post('keyword'));
 									}elseif ($hasil3['file_name']=='' && $hasil4['file_name']=='' && $hasil5['file_name']==''){
@@ -305,11 +341,11 @@ class User extends CI_Controller {
 											'judul_seo'=>seo_title($this->input->post('judul')),
 											'youtube'=>$this->input->post('youtube'),
 											'foto1'=>$hasil['file_name'],
-											'foto2'=>$hasil['file_name'],
+											'foto2'=>$hasil2['file_name'],
 											'deskripsi'=>$this->input->post('deskripsi'),
 											'hari'=>hari_ini(date('w')),
-                                            'tanggal'=>date('Y-m-d'),
-                                            'jam'=>date('H:i:s'),
+                      'tanggal'=>date('Y-m-d'),
+                      'jam'=>date('H:i:s'),
 											'meta_deskripsi'=>$this->input->post('meta_deskripsi'),
 											'keyword'=>$this->input->post('keyword'));
 										}elseif ($hasil4['file_name']=='' && $hasil5['file_name']==''){
@@ -323,8 +359,8 @@ class User extends CI_Controller {
 												'foto3'=>$hasil3['file_name'],
 												'deskripsi'=>$this->input->post('deskripsi'),
 												'hari'=>hari_ini(date('w')),
-                                                'tanggal'=>date('Y-m-d'),
-                                                'jam'=>date('H:i:s'),
+                        'tanggal'=>date('Y-m-d'),
+                        'jam'=>date('H:i:s'),
 												'meta_deskripsi'=>$this->input->post('meta_deskripsi'),
 												'keyword'=>$this->input->post('keyword'));
 
@@ -340,12 +376,10 @@ class User extends CI_Controller {
 													'foto4'=>$hasil4['file_name'],
 													'deskripsi'=>$this->input->post('deskripsi'),
 													'hari'=>hari_ini(date('w')),
-                                                    'tanggal'=>date('Y-m-d'),
-                                                    'jam'=>date('H:i:s'),
+                          'tanggal'=>date('Y-m-d'),
+                          'jam'=>date('H:i:s'),
 													'meta_deskripsi'=>$this->input->post('meta_deskripsi'),
 													'keyword'=>$this->input->post('keyword'));
-
-
 								}else {
 									$data = array(
 										'username'=>$this->input->post('id'),
@@ -354,8 +388,8 @@ class User extends CI_Controller {
 										'youtube'=>$this->input->post('youtube'),
 										'deskripsi'=>$this->input->post('deskripsi'),
 										'hari'=>hari_ini(date('w')),
-                                        'tanggal'=>date('Y-m-d'),
-                                        'jam'=>date('H:i:s'),
+                    'tanggal'=>date('Y-m-d'),
+                    'jam'=>date('H:i:s'),
 										'meta_deskripsi'=>$this->input->post('meta_deskripsi'),
 										'foto1'=>$hasil['file_name'],
 										'foto2'=>$hasil2['file_name'],
@@ -385,32 +419,69 @@ class User extends CI_Controller {
 
 						if (isset($_POST['submit']))
 						{
-						    
 							$config['upload_path'] = 'asset/projek/';
-            	            $config['allowed_types'] = 'gif|jpg|png|JPG|JPEG|PNG';
-            	            $config['max_size'] = '1000'; // kb
-	                        $this->load->library('upload', $config);
+							$config['allowed_types'] = 'gif|jpg|png|JPG|JPEG';
 
-	                        $this->upload->do_upload('foto1');
-	                        $hasil = $this->upload->data();
+							$this->upload->initialize($config);
+							$this->upload->do_upload('foto1');
+							$hasil=$this->upload->data();
+							$config['image_library']='gd2';
 							$config['source_image'] = 'asset/projek/'.$hasil['file_name'];
+							$config['create_thumb']= FALSE;
+							$config['maintain_ratio']= FALSE;
+							$config['quality']= '80%';
+							$config['new_image']= 'asset/projek/'.$hasil['file_name'];
+							$this->load->library('image_lib', $config);
+							$this->image_lib->resize();
 
+							$this->upload->initialize($config);
 							$this->upload->do_upload('foto2');
-	                        $hasil2=$this->upload->data();
+							$hasil2=$this->upload->data();
+							$config['image_library']='gd2';
 							$config['source_image'] = 'asset/projek/'.$hasil2['file_name'];
+							$config['create_thumb']= FALSE;
+							$config['maintain_ratio']= FALSE;
+							$config['quality']= '80%';
+							$config['new_image']= 'asset/projek/'.$hasil2['file_name'];
+							$this->load->library('image_lib', $config);
+							$this->image_lib->resize();
 
+							$this->upload->initialize($config);
 							$this->upload->do_upload('foto3');
-	                        $hasil3=$this->upload->data();
+							$hasil3=$this->upload->data();
+							$config['image_library']='gd2';
 							$config['source_image'] = 'asset/projek/'.$hasil3['file_name'];
+							$config['create_thumb']= FALSE;
+							$config['maintain_ratio']= FALSE;
+							$config['quality']= '80%';
+							$config['new_image']= 'asset/projek/'.$hasil3['file_name'];
+							$this->load->library('image_lib', $config);
+							$this->image_lib->resize();
 
+							$this->upload->initialize($config);
 							$this->upload->do_upload('foto4');
-	                        $hasil4=$this->upload->data();
+							$hasil4=$this->upload->data();
+							$config['image_library']='gd2';
 							$config['source_image'] = 'asset/projek/'.$hasil4['file_name'];
+							$config['create_thumb']= FALSE;
+							$config['maintain_ratio']= FALSE;
+							$config['quality']= '80%';
+							$config['new_image']= 'asset/projek/'.$hasil4['file_name'];
+							$this->load->library('image_lib', $config);
+							$this->image_lib->resize();
 
+							$this->upload->initialize($config);
 							$this->upload->do_upload('foto5');
-	                        $hasil5=$this->upload->data();
+							$hasil5=$this->upload->data();
+							$config['image_library']='gd2';
 							$config['source_image'] = 'asset/projek/'.$hasil5['file_name'];
-							
+							$config['create_thumb']= FALSE;
+							$config['maintain_ratio']= FALSE;
+							$config['quality']= '80%';
+							$config['new_image']= 'asset/projek/'.$hasil5['file_name'];
+							$this->load->library('image_lib', $config);
+							$this->image_lib->resize();
+
 							if ($hasil['file_name']=='' && $hasil2['file_name']=='' && $hasil3['file_name']=='' && $hasil4['file_name']=='' && $hasil5['file_name']==''){
 							$data = array(
 								'username'=>$this->input->post('ids'),
@@ -420,11 +491,109 @@ class User extends CI_Controller {
 								'deskripsi'=>$this->input->post('deskripsi'),
 								'meta_deskripsi'=>$this->input->post('meta_deskripsi'),
 								'keyword'=>$this->input->post('keyword'));
-								
 								$where = array('id_projek' => $this->input->post('id_projek'));
-							    $this->db->update('projek',$data,$where);
-								
-							}elseif ($hasil['file_name']=='' && $hasil2['file_name']=='' ){
+							  $this->db->update('projek',$data,$where);
+
+							}elseif ($hasil2['file_name']=='' && $hasil3['file_name']=='' && $hasil4['file_name']=='' && $hasil5['file_name']==''){
+								$data = array(
+									'username'=>$this->input->post('ids'),
+									'judul'=>$this->input->post('judul'),
+									'judul_seo'=>seo_title($this->input->post('judul')),
+									'youtube'=>$this->input->post('youtube'),
+									'deskripsi'=>$this->input->post('deskripsi'),
+									'meta_deskripsi'=>$this->input->post('meta_deskripsi'),
+									'foto1'=>$hasil['file_name'],
+									'keyword'=>$this->input->post('keyword'));
+									$where = array('id_projek' => $this->input->post('id_projek'));
+									$_image = $this->db->get_where('projek',$where)->row();
+									$query = $this->db->update('projek',$data,$where);
+									if($query){
+										unlink("asset/projek/".$_image->foto1);
+									}
+								}elseif ($hasil['file_name']=='' && $hasil3['file_name']=='' && $hasil4['file_name']=='' && $hasil5['file_name']==''){
+									$data = array(
+										'username'=>$this->input->post('ids'),
+										'judul'=>$this->input->post('judul'),
+										'judul_seo'=>seo_title($this->input->post('judul')),
+										'youtube'=>$this->input->post('youtube'),
+										'deskripsi'=>$this->input->post('deskripsi'),
+										'meta_deskripsi'=>$this->input->post('meta_deskripsi'),
+										'foto2'=>$hasil2['file_name'],
+										'keyword'=>$this->input->post('keyword'));
+										$where = array('id_projek' => $this->input->post('id_projek'));
+										$_image = $this->db->get_where('projek',$where)->row();
+										$query = $this->db->update('projek',$data,$where);
+										if($query){
+											unlink("asset/projek/".$_image->foto2);
+										}
+									}elseif ($hasil['file_name']=='' && $hasil2['file_name']=='' && $hasil4['file_name']=='' && $hasil5['file_name']==''){
+										$data = array(
+											'username'=>$this->input->post('ids'),
+											'judul'=>$this->input->post('judul'),
+											'judul_seo'=>seo_title($this->input->post('judul')),
+											'youtube'=>$this->input->post('youtube'),
+											'deskripsi'=>$this->input->post('deskripsi'),
+											'meta_deskripsi'=>$this->input->post('meta_deskripsi'),
+											'foto3'=>$hasil3['file_name'],
+											'keyword'=>$this->input->post('keyword'));
+											$where = array('id_projek' => $this->input->post('id_projek'));
+											$_image = $this->db->get_where('projek',$where)->row();
+											$query = $this->db->update('projek',$data,$where);
+											if($query){
+												unlink("asset/projek/".$_image->foto3);
+											}
+										}elseif ($hasil['file_name']=='' && $hasil2['file_name']=='' && $hasil3['file_name']=='' && $hasil5['file_name']==''){
+											$data = array(
+												'username'=>$this->input->post('ids'),
+												'judul'=>$this->input->post('judul'),
+												'judul_seo'=>seo_title($this->input->post('judul')),
+												'youtube'=>$this->input->post('youtube'),
+												'deskripsi'=>$this->input->post('deskripsi'),
+												'meta_deskripsi'=>$this->input->post('meta_deskripsi'),
+												'foto4'=>$hasil4['file_name'],
+												'keyword'=>$this->input->post('keyword'));
+												$where = array('id_projek' => $this->input->post('id_projek'));
+												$_image = $this->db->get_where('projek',$where)->row();
+												$query = $this->db->update('projek',$data,$where);
+												if($query){
+													unlink("asset/projek/".$_image->foto4);
+												}
+											}elseif ($hasil['file_name']=='' && $hasil2['file_name']=='' && $hasil3['file_name']=='' && $hasil4['file_name']==''){
+												$data = array(
+													'username'=>$this->input->post('ids'),
+													'judul'=>$this->input->post('judul'),
+													'judul_seo'=>seo_title($this->input->post('judul')),
+													'youtube'=>$this->input->post('youtube'),
+													'deskripsi'=>$this->input->post('deskripsi'),
+													'meta_deskripsi'=>$this->input->post('meta_deskripsi'),
+													'foto5'=>$hasil5['file_name'],
+													'keyword'=>$this->input->post('keyword'));
+													$where = array('id_projek' => $this->input->post('id_projek'));
+													$_image = $this->db->get_where('projek',$where)->row();
+													$query = $this->db->update('projek',$data,$where);
+													if($query){
+														unlink("asset/projek/".$_image->foto5);
+													}
+											}elseif ($hasil3['file_name']=='' && $hasil4['file_name']=='' && $hasil5['file_name']==''){
+									$data = array(
+										'username'=>$this->input->post('ids'),
+										'judul'=>$this->input->post('judul'),
+										'judul_seo'=>seo_title($this->input->post('judul')),
+										'youtube'=>$this->input->post('youtube'),
+										'deskripsi'=>$this->input->post('deskripsi'),
+										'meta_deskripsi'=>$this->input->post('meta_deskripsi'),
+										'foto1'=>$hasil['file_name'],
+										'foto2'=>$hasil2['file_name'],
+										'keyword'=>$this->input->post('keyword'));
+										$where = array('id_projek' => $this->input->post('id_projek'));
+										$_image = $this->db->get_where('projek',$where)->row();
+										$query = $this->db->update('projek',$data,$where);
+										if($query){
+											unlink("asset/projek/".$_image->foto1);
+											unlink("asset/projek/".$_image->foto2);
+										}
+
+								}elseif ($hasil['file_name']=='' && $hasil2['file_name']=='' ){
 								$data = array(
 									'username'=>$this->input->post('ids'),
 									'judul'=>$this->input->post('judul'),
@@ -463,24 +632,6 @@ class User extends CI_Controller {
 										unlink("asset/projek/".$_image->foto4);
 										unlink("asset/projek/".$_image->foto5);
 									}
-
-								}elseif ($hasil['file_name']=='' && $hasil2['file_name']=='' && $hasil3['file_name']=='' && $hasil4['file_name']==''){
-								$data = array(
-									'username'=>$this->input->post('ids'),
-									'judul'=>$this->input->post('judul'),
-									'judul_seo'=>seo_title($this->input->post('judul')),
-									'youtube'=>$this->input->post('youtube'),
-									'deskripsi'=>$this->input->post('deskripsi'),
-									'meta_deskripsi'=>$this->input->post('meta_deskripsi'),
-									'foto5'=>$hasil5['file_name'],
-									'keyword'=>$this->input->post('keyword'));
-									$where = array('id_projek' => $this->input->post('id_projek'));
-									$_image = $this->db->get_where('projek',$where)->row();
-									$query = $this->db->update('projek',$data,$where);
-									if($query){
-										unlink("asset/projek/".$_image->foto5);
-									}
-
 								}else{
 									$data = array(
 									'username'=>$this->input->post('ids'),
@@ -504,19 +655,19 @@ class User extends CI_Controller {
 														unlink("asset/projek/".$_image->foto3);
 														unlink("asset/projek/".$_image->foto4);
 														unlink("asset/projek/".$_image->foto5);
-						                    }
+						                }
 								}
 								redirect('user/projek');
 						}else{
 							if ($this->session->username==$this->uri->segment(3) OR $this->session->level=='vendor'){
 								$data['projek'] = $this->model_app->edit('projek', array('id_projek' => $id_projek, 'username' => $this->session->username))->row_array();
-                                $data['users2'] = $this->model_app->view_where('users_bisnis',array('username'=>$this->session->username))->row_array();
-							    $data['users'] = $this->model_app->view_where('users',array('username'=>$this->session->username))->row_array();
-							    $data['identitas']= $this->model_app->get_by_id_identitas($id='1');
-					            $data['modul'] = $this->model_app->view_join_one('users','users_modul','id_session','id_umod','DESC');
+                $data['users2'] = $this->model_app->view_where('users_bisnis',array('username'=>$this->session->username))->row_array();
+							  $data['users'] = $this->model_app->view_where('users',array('username'=>$this->session->username))->row_array();
+							  $data['identitas']= $this->model_app->get_by_id_identitas($id='1');
+					      $data['modul'] = $this->model_app->view_join_one('users','users_modul','id_session','id_umod','DESC');
 							$this->load->view('fronts/user/v_edit_projek',$data);
 						}else{
-								redirect('user/tambah_harga/'.$this->session->username);
+								redirect('user/edit_projek/'.$this->session->username);
 						}
 							}
 		}
@@ -534,7 +685,7 @@ class User extends CI_Controller {
 								unlink("asset/projek/".$_id->foto5);
       }
 			redirect('user/projek');
-		}	
+		}
 
     function hargas(){
 			cek_session_akses2('hargas',$this->session->id_session);
@@ -629,8 +780,8 @@ class User extends CI_Controller {
 
 						if (isset($_POST['submit']))
 						{
-						    
-						    
+
+
 				$config['upload_path'] = 'asset/harga/';
 	            $config['allowed_types'] = 'gif|jpg|png|JPG|JPEG';
 	            $this->upload->initialize($config);
@@ -646,7 +797,7 @@ class User extends CI_Controller {
                 $config['new_image']= './asset/harga/'.$hasil['file_name'];
                 $this->load->library('image_lib', $config);
                 $this->image_lib->resize();
-	            
+
 							if ($hasil['file_name']==''){
 								$data = array(
 									'username'=>$this->input->post('ids'),
@@ -709,13 +860,13 @@ class User extends CI_Controller {
       }
 			redirect('user/hargas');
 		}
-	
+
 	function edit_bisnis(){
 			cek_session_akses2('home',$this->session->id_session);
 			$id = $this->uri->segment(3);
 						if (isset($_POST['submit']))
 						{
-						    
+
 						    $config['upload_path'] = 'asset/gambar_bisnis/';
             	            $config['allowed_types'] = 'gif|jpg|png|JPG|JPEG|PNG';
             	            $this->upload->initialize($config);
@@ -731,7 +882,7 @@ class User extends CI_Controller {
                             $config['new_image']= './asset/gambar_bisnis/'.$hasil2['file_name'];
                             $this->load->library('image_lib', $config);
                             $this->image_lib->resize();
-                            
+
             	            if ($hasil2['file_name']==''){
 								$data = array(
 									'username' => $this->input->post('id'),
@@ -752,7 +903,7 @@ class User extends CI_Controller {
 									'ig'=>$this->input->post('ig'),
 									'twitter'=>$this->input->post('twitter'),
 									'alamat'=>$this->input->post('alamat'));
-									
+
 								}else{
 								$data = array(
 								    'username' => $this->input->post('id'),
@@ -774,18 +925,18 @@ class User extends CI_Controller {
 									'gambar'=>$hasil2['file_name'],
 									'twitter'=>$this->input->post('twitter'),
 									'alamat'=>$this->input->post('alamat'));
-									
+
 										$where = array('username' => $this->input->post('id'));
             							$_image = $this->db->get_where('users_bisnis',$where)->row();
             							$query = $this->model_app->update('users_bisnis',$data,$where);
             							if($query){
             					                unlink("asset/gambar_bisnis/".$_image->gambar);
-            					            } 
-									
+            					            }
+
 								}
 							$where = array('username' => $this->input->post('id'));
 							$this->model_app->update('users_bisnis',$data,$where);
-						
+
 							redirect('user/home/'.$this->input->post('id'));
 						}else{
 							if ($this->session->username==$this->uri->segment(3) OR $this->session->level=='vendor'){
@@ -819,8 +970,8 @@ class User extends CI_Controller {
                                                 }else{
                                                   echo "<option class='drop-list' value='$k->id'>$k->nama</option>";
                                                 }
-            
-            
+
+
         }
 		}else{
         $kabupaten   = $this->db->get_where('kabupaten',array('id_prov'=>$propinsiID));
@@ -831,12 +982,12 @@ class User extends CI_Controller {
                                                 }else{
                                                   echo "<option class='drop-list' value='$k->id'>$k->nama</option>";
                                                 }
-            
-            
+
+
         }
-        
+
 		}
-		        
+
 		}
     function kecamatan(){
         $kabupatenID = $_GET['id'];
@@ -851,15 +1002,15 @@ class User extends CI_Controller {
                                                   }else{
                                                   echo "<option class='drop-list' value='$k->id'>$k->nama_kec</option>";
                                                 }
-            
-            
+
+
         }
-        
+
 		}
-        
-        exit; 
+
+        exit;
     }
-   
+
 
 
 }
