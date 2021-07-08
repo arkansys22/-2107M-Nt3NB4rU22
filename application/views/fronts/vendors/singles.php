@@ -109,7 +109,7 @@
 
                                                 							</div>
                                                               <?php if(empty($post_v->youtube)){ echo "";}else{
-                                                                echo"<iframe width='100%' height='100%' src='https://www.youtube.com/embed/$post_v->youtube' frameborder='0' allowfullscreen>
+                                                                echo"<iframe width='100%' height='400px' src='https://www.youtube.com/embed/$post_v->youtube' frameborder='0' allowfullscreen>
                                                                 </iframe>";}
                                                                 ?>
                                                 						</div>
