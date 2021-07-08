@@ -32,7 +32,7 @@
 											<div class="hotel-desc">
 													<span class="color-dark-2-light"><strong><span><?php echo $post_v->namabisnis?></span></strong></span>
 													<p><?php echo $post_v->nama_kategori?></p>
-													<p><i class="fa fa-user"></i> <?php echo $post_v->views?></p>
+													<p><?php echo $post_v->views?> Dilihat</p>
 
 											</div>
 										</div>

@@ -2,11 +2,11 @@
 <html lang="id">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title><?php echo $post_v->judul?> <?php echo $post_v->namabisnis?> <?php echo $post_v->nama_kategori?> | <?php echo $identitas->nama_website?></title>
-    <meta name="title" content="<?php echo $post_v->judul?> <?php echo $post_v->namabisnis?> <?php echo $post_v->nama_kategori?> | <?php echo $identitas->nama_website?>">
-    <meta name="site_url" content="<?php echo base_url()?>vendors/<?php echo $post_v->namabisnis_seo ?>">
-    <meta name="description" content="<?php echo $post_v->deskripsi ?>">
-    <meta name="keywords" content="<?php echo $post_v->namabisnis?>, <?php echo $post_v->nama_kategori?> <?php echo $post_v->keyword?> | <?php echo $identitas->nama_website?>">
+    <title><?php echo $post_v->judul?> <?php echo $post_v->namabisnis?> <?php echo $post_v->nama_kategori?> <?php echo $post_v->nama?> | <?php echo $identitas->nama_website?></title>
+    <meta name="title" content="<?php echo $post_v->judul?> <?php echo $post_v->namabisnis?> <?php echo $post_v->nama_kategori?> <?php echo $post_v->nama?> | <?php echo $identitas->nama_website?>">
+    <meta name="site_url" content="<?php echo base_url()?>projek-detail/<?php echo $post_v->judul_seo ?>">
+    <meta name="description" content="<?php echo $post_v->meta_deskripsi ?>">
+    <meta name="keywords" content="<?php echo $post_v->namabisnis?>, <?php echo $post_v->nama_kategori?> <?php echo $post_v->nama?> <?php echo $post_v->keyword?> | <?php echo $identitas->nama_website?>">
     <meta NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,9 +15,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
     <meta property="og:site_name" content="<?php echo $identitas->nama_website?>">
-    <meta property="og:title" content="<?php echo $post_v->judul?> <?php echo $post_v->namabisnis?> <?php echo $post_v->nama_kategori?> | <?php echo $identitas->nama_website?>">
-    <meta property="og:description" content="<?php echo $post_v->deskripsi ?>">
-    <meta property="og:url" content="<?php echo base_url()?>vendors/<?php echo $post_v->namabisnis_seo ?>">
+    <meta property="og:title" content="<?php echo $post_v->judul?> <?php echo $post_v->namabisnis?> <?php echo $post_v->nama_kategori?> <?php echo $post_v->nama?> | <?php echo $identitas->nama_website?>">
+    <meta property="og:description" content="<?php echo $post_v->>meta_deskripsi ?>">
+    <meta property="og:url" content="<?php echo base_url()?>projek-detail/<?php echo $post_v->judul_seo ?>">
     <meta property="og:image" content="<?php echo base_url()?>asset/projek/<?php echo $post_v->foto1?>">
     <meta property="og:image:url" content="<?php echo base_url()?>asset/projek/<?php echo $post_v->foto1?>">
     <meta property="og:image:width" content="400">
@@ -55,31 +55,21 @@
 											<div class="hotel-desc">
 													<span class="color-dark-2-light"><strong><span><?php echo $post_v->namabisnis?></span></strong></span>
 													<p><?php echo $post_v->nama_kategori?></p>
-													<p><i class="fa fa-user"></i> <?php echo $post_v->views?></p>
+													<p><?php echo $post_v->views?> Dilihat</p>
 
 											</div>
 										</div>
-										<div class="rate">
-												<span class="fa fa-star color-yellow"></span>
-												<span class="fa fa-star color-yellow"></span>
-												<span class="fa fa-star color-yellow"></span>
-												<span class="fa fa-star color-yellow"></span>
-												<span class="fa fa-star color-yellow"></span>
-												<span>(Fitur segera)</span>
-										</div>
 											<div class="contact-line"><p><i class="fa fa-map-marker"></i><a href="#"> <?php echo $post_v->nama_kec?> - <?php echo $post_v->nama?></p></a></div>
-											<div class="contact-line"><p><i class="fa fa-envelope-o"></i><a href="mailto:<?php echo $post_v->email?>"> <?php echo $post_v->email?></p></a></div>
-											<a href="mailto:<?php echo $post_v->nomerbisnis?>"><div class="contact-line"><p><i class="fa fa-phone"></i> <?php echo $post_v->nomerbisnis?></p></div></a>
 											<div class="contact-line"><p><strong>Media Sosial</strong></p></div>
 											<div class="contact-line">
 												<a target="_blank" href="https://api.whatsapp.com/send?phone=+62<?php echo $post_v->nowhatsapp?>&text=Halo,%20Saya%20menemukan%20<?php echo $post_v->namabisnis?>%20di%20Mantenbaru.com.%20Bisa%20bantu%20saya?" class="button-s-2 bg-4 m-right"><i class="fa fa-whatsapp"> WA</i></a>
-												<a target="_blank" href="<?php echo $post_v->fb?>" class="button-s-2 bg-7 m-right"><i class="fa fa-facebook"> FB</i></a>
-												<a target="_blank" href="<?php echo $post_v->ig?>" class="button-s-2 bg-1 m-right"><i class="fa fa-instagram"> IG</i></a>
-												<a target="_blank" href="<?php echo $post_v->youtube?>" class="button-s-2 bg-5 m-right"><i class="fa fa-youtube"> YT</i></a>
+												<a target="_blank" href="https://www.facebook.com/<?php echo $post_v->fb?>" class="button-s-2 bg-7 m-right"><i class="fa fa-facebook"> FB</i></a>
+												<a target="_blank" href="https://www.instagram.com/<?php echo $post_v->ig?>" class="button-s-2 bg-1 m-right"><i class="fa fa-instagram"> IG</i></a>
+												<a target="_blank" href="https://www.youtube.com/channel/<?php echo $post_v->twitter?>" class="button-s-2 bg-5 m-right"><i class="fa fa-youtube"> YT</i></a>
 											</div>
 											<hr>
 											<div class="contact-line">
-												<center><a href="https://api.whatsapp.com/send?phone=+62<?php echo $post_v->nowhatsapp?>&text=Halo,%20Saya%20menemukan%20<?php echo $post_v->namabisnis?>%20di%20Mantenbaru.com.%20Saya%20mau%20tanya-tanya%20dulu." class="c-button small bg-dr-blue-2 hv-dr-blue-2-o"><i class="fa fa-comments-o"> Kirim Penawaran</i></a></center>
+												<center><a href="https://api.whatsapp.com/send?phone=+62<?php echo $post_v->nowhatsapp?>&text=Halo,%20Saya%20menemukan%20<?php echo $post_v->namabisnis?>%20di%20Mantenbaru.com.%20Saya%20mau%20tanya-tanya%20dulu." class="c-button small bg-dr-blue-2 hv-dr-blue-2-o"><i class="fa fa-comments-o"> Konsultasi Free</i></a></center>
 											</div>
 											<br>
 											<div class="row contact-line">
