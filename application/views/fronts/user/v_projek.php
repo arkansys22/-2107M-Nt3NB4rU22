@@ -40,7 +40,8 @@
                       			<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
                       				<div class='radius-mask tour-block hover-aqua'>
                       				  <div class='clip'>
-                  						 <div class='bg bg-bg-chrome act' style='background-image:url(".base_url()."asset/projek/$row[foto1])'>
+                  						 <div class='bg bg-bg-chrome act'>
+                               <img src='".base_url()."asset/projek/$row[foto1]' alt=''>
                   						 </div>
                   					  </div>
                   					  <div class='tour-layer delay-1'></div>
