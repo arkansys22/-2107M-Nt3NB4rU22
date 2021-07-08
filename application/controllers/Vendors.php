@@ -4,7 +4,7 @@ class Vendors extends CI_Controller {
 
 	public function all()
 		{
-		
+
 		$jumlah= $this->model_app->view_join_row('users_bisnis','kategori','id_kategori','id_bisnis','DESC');
 
 			$config['base_url'] = base_url().'vendors/all/page/';
@@ -38,7 +38,7 @@ class Vendors extends CI_Controller {
 			}
 
 			if (is_numeric($dari)) {
-			    
+
 				$this->data['promo_stat']   = 'class="active"';
 				$this->data['identitas']= $this->model_app->get_by_id_identitas($id='1');
 				$this->data['post_bisnis']= $this->model_app->view_join_three_limit('users_bisnis','kategori','kabupaten','harga','id_kategori','id_harga','kabupaten','id','id_bisnis','DESC',$dari,$config['per_page']);
@@ -50,7 +50,7 @@ class Vendors extends CI_Controller {
 			$this->pagination->initialize($config);
 			$this->load->view('fronts/vendors/v', $this->data);
 		}
-		
+
 	public function read($id)
     	{
             $cap = $this->buat_captcha();
@@ -62,7 +62,7 @@ class Vendors extends CI_Controller {
 			}else{
 				$dari = $this->uri->segment('4');
 			}
-    		
+
     		if ($row)
                 {
                 $this->data['post_v']            = $this->model_app->get_by_id_vendors($id);
@@ -91,14 +91,13 @@ class Vendors extends CI_Controller {
 			}else{
 				$dari = $this->uri->segment('4');
 			}
-    		
+
     		if ($row)
                 {
                 $this->data['post_v']            = $this->model_app->get_by_id_projek($id);
     			$this->add_count_projek($id);
     			$this->data['post_harga']= $this->model_app->view_join_ones('users_bisnis','harga','username','id_bisnis','DESC');
-    			$this->data['post_projek']= $this->model_app->view_join_ones('users_bisnis','projek','username','id_bisnis','DESC');
-    			$this->data['submenu'] = "vendors";
+    			$this->data['post_projek']= $this->model_app->view_join_ones('users_bisnis','projek','username','id_bisnis','DESC');    		
     			$this->data['identitas']= $this->model_app->get_by_id_identitas($id='1');
     		    $this->load->view('fronts/vendors/singles', $this->data);
     		    }
@@ -108,8 +107,8 @@ class Vendors extends CI_Controller {
                 <button type="button" class="close" data-dismiss="alert">&times;</button>Berita tidak ditemukan</b></div>');
               redirect(base_url());
             }
-    	}	
-    	
+    	}
+
     	public function readharga($id)
     	{
             $cap = $this->buat_captcha();
@@ -121,7 +120,7 @@ class Vendors extends CI_Controller {
 			}else{
 				$dari = $this->uri->segment('4');
 			}
-    		
+
     		if ($row)
                 {
                 $this->data['post_h']            = $this->model_app->get_by_id_harga($id);
@@ -137,7 +136,7 @@ class Vendors extends CI_Controller {
               redirect(base_url());
             }
     	}
-    	
+
 		public function kategori()
 		{
 			$query = $this->model_utama->view_where('kategori',array('kategori_seo' => $this->uri->segment(3)));
@@ -242,7 +241,7 @@ class Vendors extends CI_Controller {
 				 $this->Berita_model->update_counter_projek(urldecode($id));
 		 }
  }
- 
+
  		function add_count_vendor($id)
  {
 		 // load cookie helper

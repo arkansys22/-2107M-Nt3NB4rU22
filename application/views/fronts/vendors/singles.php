@@ -1,7 +1,29 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <?php $this->load->view('fronts/vendors/meta')?>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title><?php echo $post_v->judul?> <?php echo $post_v->namabisnis?> <?php echo $post_v->nama_kategori?> | <?php echo $identitas->nama_website?></title>
+    <meta name="title" content="<?php echo $post_v->judul?> <?php echo $post_v->namabisnis?> <?php echo $post_v->nama_kategori?> | <?php echo $identitas->nama_website?>">
+    <meta name="site_url" content="<?php echo base_url()?>vendors/<?php echo $post_v->namabisnis_seo ?>">
+    <meta name="description" content="<?php echo $post_v->deskripsi ?>">
+    <meta name="keywords" content="<?php echo $post_v->namabisnis?>, <?php echo $post_v->nama_kategori?> <?php echo $post_v->keyword?> | <?php echo $identitas->nama_website?>">
+    <meta NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="web_author" content="arkansys.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <meta property="og:site_name" content="<?php echo $identitas->nama_website?>">
+    <meta property="og:title" content="<?php echo $post_v->judul?> <?php echo $post_v->namabisnis?> <?php echo $post_v->nama_kategori?> | <?php echo $identitas->nama_website?>">
+    <meta property="og:description" content="<?php echo $post_v->deskripsi ?>">
+    <meta property="og:url" content="<?php echo base_url()?>vendors/<?php echo $post_v->namabisnis_seo ?>">
+    <meta property="og:image" content="<?php echo base_url()?>asset/projek/<?php echo $post_v->foto1?>">
+    <meta property="og:image:url" content="<?php echo base_url()?>asset/projek/<?php echo $post_v->foto1?>">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="350">
+    <meta property="og:type" content="article">
+    <link rel="shortcut icon" href="https://www.mantenbaru.com/asset/frontend/aspanel/img/fav.png" type="image/x-icon">
     <?php $this->load->view('fronts/utama/css')?>
   </head>
   <body data-color="theme-1">
