@@ -107,8 +107,8 @@
                                                                          			    ?>
                                                                                   <?php if(empty($post_v->youtube)){ echo "";}else{
                                                                                   echo"<iframe width='560' height='315' src='https://www.youtube.com/embed/$post_v->youtube' frameborder='0' allowfullscreen>
-                                                                                    </iframe>
-                                                                                  <?php }?>
+                                                                                    </iframe>";}
+                                                                                ?>
 
                                                 							</div>
                                                 						</div>
