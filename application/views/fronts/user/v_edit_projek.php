@@ -58,39 +58,38 @@
                        <div class='input-style-1 b-50 type-2 color-2'>
                          <input name='keyword' type='text' value='$projek[keyword]'>
                        </div>
-                       <h5>Cover Landscape (Max. Size 1 Mb)</h5>
+                       <h5>Cover Foto 1</h5>
                        <div class='input-style-1 b-50 type-2 color-2'>
                          <input name='foto1' type='file' >";
                          if ($projek['foto1'] != ''){ echo "<i style='color:red'>Foto Saat ini : </i><a target='_BLANK' href='".base_url()."asset/projek/$projek[foto1]'>$projek[foto1]</a>"; }
                      echo "</div>
-                     <h5>Landscape (Max. Size 1 Mb)</h5>
+                     <h5>Foto 2</h5>
                      <div class='input-style-1 b-50 type-2 color-2'>
                        <input name='foto2' type='file' >";
                        if ($projek['foto2'] != ''){ echo "<i style='color:red'>Foto Saat ini : </i><a target='_BLANK' href='".base_url()."asset/projek/$projek[foto2]'>$projek[foto2]</a>"; }
                    echo "</div>
-                   <h5>Landscape (Max. Size 1 Mb)</h5>
+                   <h5>Foto 3</h5>
                    <div class='input-style-1 b-50 type-2 color-2'>
                      <input name='foto3' type='file' >";
                      if ($projek['foto3'] != ''){ echo "<i style='color:red'>Foto Saat ini : </i><a target='_BLANK' href='".base_url()."asset/projek/$projek[foto3]'>$projek[foto3]</a>"; }
                  echo "</div>
-                 <h5>Portrait (Max. Size 1 Mb)</h5>
+                 <h5>Foto 4</h5>
                  <div class='input-style-1 b-50 type-2 color-2'>
                    <input name='foto4' type='file' >";
                    if ($projek['foto4'] != ''){ echo "<i style='color:red'>Foto Saat ini : </i><a target='_BLANK' href='".base_url()."asset/projek/$projek[foto4]'>$projek[foto4]</a>"; }
                echo "</div>
-               <h5>Landscape (Max. Size 1 Mb)</h5>
+               <h5>Foto 5</h5>
                <div class='input-style-1 b-50 type-2 color-2'>
                  <input name='foto5' type='file' >";
                  if ($projek['foto5'] != ''){ echo "<i style='color:red'>Foto Saat ini : </i><a target='_BLANK' href='".base_url()."asset/projek/$projek[foto5]'>$projek[foto5]</a>"; }
-             echo "</div>
+                 echo "</div>
                        <button name ='submit' type='submit' class='c-button bg-dr-blue-2 hv-dr-blue-2-o'><span>Simpan</span></button>  ";
 
                          echo form_close();
                         ?>
-           </div>
+                </div>
 
     		     </div>
-
              <div class="acc-panel penawaran">
                   <div class="acc-title"><span class="acc-icon"></span>Order <span><?php echo $users['level'] ?></span></div>
                   <div class="acc-body">

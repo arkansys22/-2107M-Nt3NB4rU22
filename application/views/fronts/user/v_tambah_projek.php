@@ -57,19 +57,19 @@
                        <div class='input-style-1 b-50 type-2 color-2'>
                          <input name='keyword' type='text' >
                        </div>
-                       <h5>Cover Landscape (Max. Size 1 Mb)</h5>
+                       <h5>Cover Foto 1</h5>
                        <div class='input-style-1 b-50 type-2 color-2'>
                          <input name='foto1' type='file' >
-                         <h5>Landscape (Max. Size 1 Mb)</h5>
+                         <h5>Foto 2</h5>
                          <div class='input-style-1 b-50 type-2 color-2'>
                            <input name='foto2' type='file' >
-                           <h5>Landscape (Max. Size 1 Mb)</h5>
+                           <h5>Foto 3</h5>
                            <div class='input-style-1 b-50 type-2 color-2'>
                              <input name='foto3' type='file' >
-                             <h5>Portrait (Max. Size 1 Mb)</h5>
+                             <h5>Foto 4</h5>
                              <div class='input-style-1 b-50 type-2 color-2'>
                                <input name='foto4' type='file' >
-                               <h5>Portrait (Max. Size 1 Mb)</h5>
+                               <h5>Foto 5</h5>
                                <div class='input-style-1 b-50 type-2 color-2'>
                                  <input name='foto5' type='file' >";
                      echo "</div></div></div></div></div>
@@ -77,7 +77,7 @@
 
                          echo form_close();
                         ?>
-           </div>
+                      </div>
 
     		     </div>
 
@@ -128,6 +128,8 @@
     	</div>
     </div>
     </div>
+  </div>
+</div>
 
 
 
