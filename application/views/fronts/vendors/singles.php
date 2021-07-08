@@ -94,7 +94,6 @@
   		    <div class="col-xs-12 col-sm-8 col-md-8">
 											<div class="col-md-12">
 							 				<div class="simple-tab bg-white tab-3 color-3 tab-wrapper">
-
 							 					<div class="tabs-content clearfix">
 							 						<div class="tab-info active clearfix">
 															<div class="col-xs-12 col-sm-12 col-md-12 clearfix">

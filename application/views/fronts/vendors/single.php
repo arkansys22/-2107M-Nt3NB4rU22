@@ -107,7 +107,9 @@
 
     																		          	 echo "</div>
     																		          	 <div class='title clearfix'>
+                                                     <div class='judul_content'>
     																		          	    <h5><b>$post_p->judul</b></h5>
+                                                        </div>
     																		            </div>
     																		          </div>
 																		            </a>
