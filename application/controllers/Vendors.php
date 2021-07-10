@@ -41,8 +41,8 @@ class Vendors extends CI_Controller {
 
 				$this->data['promo_stat']   = 'class="active"';
 				$this->data['identitas']= $this->model_app->get_by_id_identitas($id='1');
-				$this->data['post_bisnis']= $this->model_app->view_join_three_limit('users_bisnis','kategori','kabupaten','harga','id_kategori','id_harga','kabupaten','id','id_bisnis','DESC',$dari,$config['per_page']);
-                $this->data['post_kategori'] = $this->model_app->view_ordering_limits('kategori','kategori_seo','ASC',$dari,$config['per_page2']);
+				$this->data['post_bisnis']= $this->model_app->view_join_three_limit('users_bisnis','kategori','kabupaten','harga','id_kategori','id_harga','kabupaten','id','id_bisnis','RAND',$dari,$config['per_page']);
+        $this->data['post_kategori'] = $this->model_app->view_ordering_limits('kategori','kategori_seo','ASC',$dari,$config['per_page2']);
 			}else{
 				redirect('main');
 			}
@@ -97,7 +97,7 @@ class Vendors extends CI_Controller {
                 $this->data['post_v']            = $this->model_app->get_by_id_projek($id);
     			$this->add_count_projek($id);
     			$this->data['post_harga']= $this->model_app->view_join_ones('users_bisnis','harga','username','id_bisnis','DESC');
-    			$this->data['post_projek']= $this->model_app->view_join_ones('users_bisnis','projek','username','id_bisnis','DESC');    		
+    			$this->data['post_projek']= $this->model_app->view_join_ones('users_bisnis','projek','username','id_bisnis','DESC');
     			$this->data['identitas']= $this->model_app->get_by_id_identitas($id='1');
     		    $this->load->view('fronts/vendors/singles', $this->data);
     		    }
@@ -180,7 +180,7 @@ class Vendors extends CI_Controller {
 
 				if (is_numeric($dari)) {
 				    $this->data['identitas']= $this->model_app->get_by_id_identitas($id='1');
-					$this->data['post_news'] = $this->model_app->view_join_where_kategori('users_bisnis','kategori','harga','kabupaten','id_kategori',array('kategori_seo' => $this->uri->segment(3),'users_bisnis.id_kategori' => $row['id_kategori']),'id_bisnis','DESC',$dari,$config['per_page']);
+					$this->data['post_news'] = $this->model_app->view_join_where_kategori('users_bisnis','kategori','harga','kabupaten','id_kategori',array('kategori_seo' => $this->uri->segment(3),'users_bisnis.id_kategori' => $row['id_kategori']),'id_bisnis','RAND',$dari,$config['per_page']);
 					$this->data['header']   = 'Daftar vendor wedding planner di mantenbaru yang menyediakan jasa wedding organizer yang mempermudah calon pasangan pengantin dalam memilih vendor pernikahan yang tepat';
                     $this->data['post_kategori'] = $this->model_app->view_ordering_limits('kategori','kategori_seo','ASC',$dari,$config['per_page2']);
 				}else{
