@@ -5,7 +5,7 @@ class Vendors extends CI_Controller {
 	public function all()
 		{
 
-		$jumlah= $this->model_app->view_join_row('users_bisnis','kategori','id_kategori','id_bisnis','DESC');
+		$jumlah= $this->model_app->view_join_row('users_bisnis','kategori','id_kategori','id_bisnis','rand');
 
 			$config['base_url'] = base_url().'vendors/all/page/';
 			$config['total_rows'] = $jumlah;
@@ -144,7 +144,7 @@ class Vendors extends CI_Controller {
 				redirect('main');
 			}else{
 				$row = $query->row_array();
-				$jumlah= $this->model_utama->view_where('users_bisnis',array('id_kategori' => $row['id_kategori']),'id_bisnis','DESC')->num_rows();
+				$jumlah= $this->model_utama->view_where('users_bisnis',array('id_kategori' => $row['id_kategori']),'id_bisnis','rand')->num_rows();
 				$config['base_url'] = base_url().'vendors/kategori/'.$this->uri->segment(3);
 				$config['total_rows'] = $jumlah;
 				$config['per_page'] = 6;
