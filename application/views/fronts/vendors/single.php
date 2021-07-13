@@ -102,7 +102,7 @@
 																		            <a href='".base_url()."projek-detail/$post_p->judul_seo'>
     																		          	 <div class='radius-top'>";
     																		          	     if(empty($post_p->foto1)) {
-    																		          	     echo "<img class='img-responsive img-full' src='".base_url()."asset/frontend/noimage.png'>";}
+    																		          	     echo "<img class='img-responsive img-full' src='".base_url()."asset/frontend/noimage_paket.jpg'>";}
                                                                              			        else { echo "<img class='img-responsive img-full' src='".base_url()."asset/projek/$post_p->foto1'> "; }
 
     																		          	 echo "</div>
@@ -134,7 +134,7 @@
 											 					<div class="tour-item style-2">
 											 						<div class="radius-top">
 
-											 						 	<img class="img-responsive img-full" <?php if(empty($post_h->foto_h)) {echo "<img src='".base_url()."asset/frontend/noimage.png'>";}
+											 						 	<img class="img-responsive img-full" <?php if(empty($post_h->foto_h)) {echo "<img src='".base_url()."asset/frontend/noimage_paket.jpg'>";}
                                                          			        else { echo " <img src='".base_url()."asset/harga/".$post_h->foto_h."'> ";}
                                                          			        ?>
 											 						</div>

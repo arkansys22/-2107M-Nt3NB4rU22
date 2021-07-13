@@ -216,7 +216,7 @@
                 <div class="swiper-slide">
                     <div class="hotel-item">
                        <div class="radius-top">
-                         <img <?php if(empty($post->foto_h)) {echo "<img src='".base_url()."asset/layout_foto_promo.png'>";}
+                         <img <?php if(empty($post->foto_h)) {echo "<img src='".base_url()."asset/frontend/noimage_paket.jpg'>";}
                                                  else { echo " <img src='".base_url()."asset/harga/".$post->foto_h."'> ";}
                                                  ?>
                         <div class="price price-s-1">Rp. <?php echo number_format($post->harga,0,',','.')?></div>
@@ -261,7 +261,7 @@
 							  <div class="swiper-slide">
 						          <div class="hotel-item style-2">
 						          	 <div class="radius-top">
-                           <img <?php if(empty($post_new->gambar)) {echo "<img src='".base_url()."asset/layout_foto_promo.png'>";}
+                           <img <?php if(empty($post_new->gambar)) {echo "<img src='".base_url()."asset/frontend/noimage_paket.jpg'>";}
                                                    else { echo " <img src='".base_url()."asset/foto_blogs/".$post_new->gambar."'> ";}
                                                    ?>
                         <div class="price price-s-1"><?php echo $post_new->nama_kategori ?></div>
