@@ -31,7 +31,7 @@
 
 											<div class="tour-layer delay-1"></div>
 											<div class="hotel-desc">
-													<span class="color-dark-2-light"><strong><span><?php echo $post_h->namabisnis?></span></strong></span>
+													<span class="color-dark-2-light"><a href="<?php echo base_url("vendors/$post_v->namabisnis_seo ") ?>"><strong><span><?php echo $post_v->namabisnis?></span></strong></a></span>
 													<p><?php echo $post_h->nama_kategori?></p>
 													<p><i class="fa fa-user"></i> <?php echo $post_h->views?></p>
 
