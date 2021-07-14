@@ -66,10 +66,7 @@ class User extends CI_Controller {
 						$data['title'] = 'Periksa kembali email dan password Anda!';
 						redirect(site_url('daftar'));
 						}else{
-
-
-
-			              	$saltid   = md5($email);
+			        $saltid   = md5($email);
 							$aktivasi   = 0;
 							$data = array('username'=>$this->db->escape_str($this->input->post('username')),
 															'password'=>hash("sha512", md5($this->input->post('password'))),
@@ -78,8 +75,8 @@ class User extends CI_Controller {
 															'email'=>$this->db->escape_str($this->input->post('email')),
 															'aktivasi'=> $aktivasi,
 															'hari'=>hari_ini(date('w')),
-                                                            'tanggal'=>date('Y-m-d'),
-                                                            'jam'=>date('H:i:s'),
+                              'tanggal'=>date('Y-m-d'),
+                              'jam'=>date('H:i:s'),
 															'nowhatsapp'=>$this->db->escape_str($this->input->post('nowhatsapp')),
 															'level'=>$this->db->escape_str($this->input->post('kategori')),
 															'blokir'=>'N',
@@ -124,7 +121,7 @@ class User extends CI_Controller {
 					$config['protocol'] = 'smtp';
 					$config['smtp_host'] = 'ssl://mail.mantenbaru.com'; //smtp host name
 					$config['smtp_port'] = '465'; //smtp port number
-					$config['smtp_user'] = 'no-reply@mantenbaru.com';
+					$config['smtp_user'] = 'aktivasi@mantenbaru.com';
 					$config['smtp_pass'] = 'dh4wy3p1c'; //$from_email password
 					$config['mailtype'] = 'html';
 					$config['charset'] = 'iso-8859-1';
@@ -132,7 +129,7 @@ class User extends CI_Controller {
 					$config['newline'] = "\r\n"; //use double quotes
 					$this->email->initialize($config);
 					$url = base_url()."user/confirmation/".$saltid;
-					$this->email->from('no-reply@mantenbaru.com', 'Mantenbaru');
+					$this->email->from('aktivasi@mantenbaru.com', 'Mantenbaru');
 					$this->email->to($email);
 					$this->email->subject('Verifikasi Email - Mantenbaru');
 					$message = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'></head><body><p><strong>Hallo, $username</strong></p><p>Hanya tinggal 1 langkah lagi untuk bisa bergabung dengan Mantenbaru.</p><p>Silahkan mengklik link di bawah ini</p>".$url."<br/><p>Salam Hangat</p><p>Mantenbaru Team</p></body></html>";
