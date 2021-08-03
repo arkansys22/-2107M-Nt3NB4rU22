@@ -177,24 +177,29 @@ class User extends CI_Controller {
 			$id = $this->uri->segment(3);
 						if (isset($_POST['submit']))
 						{
-							$config['upload_path'] = 'asset/foto_user/';
+													$config['upload_path'] = 'asset/foto_user/';
             	            $config['allowed_types'] = 'gif|jpg|png|JPG|JPEG';
             	            $config['max_size'] = '1000'; // kb
             	            $this->load->library('upload', $config);
             	            $this->upload->do_upload('foto');
             	            $hasil=$this->upload->data();
-							if ($hasil['file_name']==''){
+							if ($hasil['file_name']=='' AND $this->input->post('password') ==''){
 							$data = array(
 								'namadepan'=>$this->input->post('namadepan'),
 								'namabelakang'=>$this->input->post('namabelakang'),
-								'password'=>hash("sha512", md5($this->input->post('password'))),
+								'nowhatsapp'=>$this->input->post('nowhatsapp'));
+							}else if($hasil['file_name']==''){
+							$data = array(
+								'namadepan'=>$this->input->post('namadepan'),
+								'namabelakang'=>$this->input->post('namabelakang'),
+								'password'=> hash("sha512", md5($this->input->post('password'))),
 								'nowhatsapp'=>$this->input->post('nowhatsapp'));
 							}else{
 								$data = array(
 									'namadepan'=>$this->input->post('namadepan'),
 									'namabelakang'=>$this->input->post('namabelakang'),
 									'nowhatsapp'=>$this->input->post('nowhatsapp'),
-									'password'=>hash("sha512", md5($this->input->post('password'))),
+									'password'=> hash("sha512", md5($this->input->post('password'))),
 									'foto'=>$hasil['file_name']);
 							$where = array('id_users' => $this->input->post('id'));
 							$_image = $this->db->get_where('users',$where)->row();

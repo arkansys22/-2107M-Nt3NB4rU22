@@ -28,7 +28,7 @@
                         </div>
                         <h5>Password</h5>
                         <div class='input-style-1 b-50 type-2 color-2'>
-                          <input name='password' type='password' onkeyup=\"nospaces(this)\"' >
+                          <input name='password' type='password'>
                         </div>
                         <h5>Foto</h5>
                         <div class='input-style-1 b-50 type-2 color-2'>
