@@ -946,6 +946,8 @@ class User extends CI_Controller {
 							$data['users'] = $this->model_app->view_where('users',array('username'=>$this->session->username))->row_array();
 							$data['user'] = $this->model_app->edit('users_bisnis', array('username' => $id))->row_array();
 							$data['propinsi'] = $this->db->get('provinsi');
+							$data['kab'] = $this->db->get('kabupaten');
+							$data['kec'] = $this->db->get('kecamatan');
 							$data['records'] = $this->model_app->view_where_ordering('harga',array('username'=>$this->session->username),'id_harga','DESC');
 							$data['record'] = $this->model_app->view_ordering('kategori','id_kategori','DESC');
 							$data['provinsi'] = $this->model_app->view_ordering2('provinsi','id','DESC');

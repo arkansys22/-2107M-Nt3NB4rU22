@@ -16,7 +16,7 @@
                                                 }else{
                                                   echo "<option class='drop-list' value='$row[id_kategori]'>$row[nama_kategori]</option>";
                                                 }}
-                        
+
                                       echo "</select></div></div></div>
                                       <h5>Nama Bisnis</h5>
                   										<div class='input-style-1 b-50 type-2 color-2'>
@@ -41,7 +41,7 @@
                                                 }else{
                                                   echo "<option class='drop-list' value='$row[id_harga]'>$row[judul] - $row[harga]</option>";
                                                 }}
-                        
+
                                       echo "</select></div></div></div>
                   					<h5>Provinsi</h5>
                                       <div class='input-style-1 b-50 type-2 color-5'>
@@ -62,16 +62,30 @@
                   											  <div class='type-2 color-8'>
                   													<div class='drop-wrap drop-wrap-s-4 color-2'>
                                               <select class='drop' name='kabupaten' id='kabupatenArea' onchange='loadKecamatan()'>";
-                                             
+                                              foreach ($kab ->result() as $p) {
+                                                  if ($users2['kabupaten'] == $p->id){
+                                                echo "<option class='drop-list' value='$p->id' selected>$p->nama</option>";
+                                                  }else{
+                                                  echo "<option class='drop-list' value='$p->id'>$p->nama</option>";
+                                                }
+                                              }
+
                                       echo "</select></div></div></div>
                                       <h5>Kecamatan</h5>
                                       <div class='input-style-1 b-50 type-2 color-5'>
                   											  <div class='type-2 color-8'>
                   													<div class='drop-wrap drop-wrap-s-4 color-2'>
                                               <select class='drop' name='kecamatan' id='kecamatanArea'>";
-                                              
+                                              foreach ($kec ->result() as $p) {
+                                                  if ($users2['kecamatan'] == $p->id){
+                                                echo "<option class='drop-list' value='$p->id' selected>$p->nama_kec</option>";
+                                                  }else{
+                                                  echo "<option class='drop-list' value='$p->id'>$p->nama_kec</option>";
+                                                }
+                                              }
+
                                       echo "</select></div></div></div>
-                                     
+
                   				 						<h5>Kode Pos</h5>
                   										<div class='input-style-1 b-50 type-2 color-2'>
                   											<input name='kodepos' type='text' value='$users2[kodepos]' >
