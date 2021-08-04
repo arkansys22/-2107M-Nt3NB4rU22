@@ -8,7 +8,7 @@ class User extends CI_Controller {
 	}
 
 	public function login()	{
-					$this->form_validation->set_rules('a','','trim|required', array('trim' => '', 'required' => 'Email belum diisi'));
+					$this->form_validation->set_rules('a','','trim|required', array('trim' => '', 'required' => 'Username belum diisi'));
 					$this->form_validation->set_rules('b','','trim|required', array('trim' => '', 'required' => 'Password belum diisi'));
 					if($this->form_validation->run() != false){
 						if (isset($_POST['submit'])){
@@ -23,16 +23,16 @@ class User extends CI_Controller {
 									array('username'=>$row['username'], 'level'=>$row['level'],'id_users'=>$row['id_users'],'id_session'=>$row['id_session']));
 								redirect('user/home');
 							}else{
-								$data['title'] = 'Periksa kembali email dan password Anda!';
+								$data['title'] = 'Periksa kembali username dan password Anda!';
 								$this->load->view('fronts/user/v_login',$data);
 							}
 					}else{
-						$data['title'] = 'Periksa kembali email dan password Anda!';
+						$data['title'] = 'Periksa kembali username dan password Anda!';
 						$this->load->view('fronts/user/v_login',$data);
 					}
 
 				}	else{
-						$data['title'] = 'Periksa kembali email dan password Anda!';
+						$data['title'] = 'Periksa kembali username dan password Anda!';
 						$this->load->view('fronts/user/v_login',$data);
 					}
 		}
