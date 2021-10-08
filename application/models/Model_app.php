@@ -7,7 +7,7 @@ class Model_app extends CI_model{
     public $table_promo = 'promo_tbl';
     public $table_blogs = 'blogs_tbl';
     public $table_investasi = 'investasi_tbl';
-    
+
     public $id_kabupaten = 'id';
     public $id_kecamatan = 'id';
     public $uname = 'username';
@@ -26,24 +26,24 @@ class Model_app extends CI_model{
     public $table_projek='projek';
     public $id_identitas    = 'id_identitas';
     public $table_identitas = 'identitas';
-    
-    
-    
-    
 
-    public function verifyemail($key)  
-    {  
-        $data = array('aktivasi' => 1);  
-        $this->db->where('md5(email)', $key);  
-        return $this->db->update('users', $data);  
-    }  
+
+
+
+
+    public function verifyemail($key)
+    {
+        $data = array('aktivasi' => 1);
+        $this->db->where('md5(email)', $key);
+        return $this->db->update('users', $data);
+    }
 
     function get_by_id_identitas($id)
     {
         $this->db->where($this->id_identitas, $id);
         return $this->db->get($this->table_identitas)->row();
     }
-    
+
     public function view($table){
         return $this->db->get($table);
     }
@@ -55,7 +55,7 @@ class Model_app extends CI_model{
         $this->db->where('username',$data);
         return $this->db->get($table);
     }
-    
+
     public function view_ordering2($table,$order,$ordering){
         $this->db->select('*');
         $this->db->from($table);
@@ -77,7 +77,7 @@ class Model_app extends CI_model{
     public function delete($table, $where){
         return $this->db->delete($table, $where);
     }
-    
+
     public function view_ordering_limits($table,$order,$ordering,$baris,$dari){
          $this->db->select('*');
          $this->db->from($table);
@@ -86,7 +86,7 @@ class Model_app extends CI_model{
          return $this->db->get()->result();
      }
 
-    
+
 
     public function view_join_where2($table1,$table2,$field,$where){
         $this->db->select('*');
@@ -95,12 +95,12 @@ class Model_app extends CI_model{
         $this->db->where($where);
         return $this->db->get();
     }
-    
+
     public function view_joinwhere_2($table,$data){
         $this->db->where($data);
         return $this->db->get($table);
     }
-    
+
     public function view_ordering_limit($table,$order,$ordering,$baris,$dari){
         $this->db->select('*');
         $this->db->order_by($order,$ordering);
@@ -108,15 +108,15 @@ class Model_app extends CI_model{
         return $this->db->get($table);
     }
 
-    
-    
+
+
     public function view_join_where_2($table1,$table2,$field1,$field2){
         $this->db->select('*');
         $this->db->from($table1);
         $this->db->join($table2, $table1.'.'.$field1.'='.$table2.'.'.$field2);
         return $this->db->get()->row_array();
     }
-    
+
     public function view_join_wheres($table1,$table2,$field){
         $this->db->select('*');
         $this->db->from($table1);
@@ -158,7 +158,7 @@ class Model_app extends CI_model{
         $this->db->order_by($order,$ordering);
         return $this->db->get()->result_array();
     }
-    
+
     public function view_join_ones($table1,$table2,$field,$order,$ordering){
         $this->db->select('*');
         $this->db->from($table1);
@@ -166,7 +166,7 @@ class Model_app extends CI_model{
         $this->db->order_by($order,$ordering);
         return $this->db->get()->result();
     }
-    
+
     public function view_ones($table1,$order,$ordering){
         $this->db->select('*');
         $this->db->from($table1);
@@ -179,7 +179,7 @@ class Model_app extends CI_model{
         $this->db->join($table2, $table1.'.'.$field.'='.$table2.'.'.$field);
         $this->db->join($table3, $table2.'.'.$this->id_kategori.'='.$table3.'.'.$this->id_kategori);
         $this->db->join($table4, $table2.'.'.$this->kabupaten.'='.$table4.'.'.$this->id_kabupaten);
-        
+
         return $this->db->get()->result();
     }
 
@@ -202,7 +202,7 @@ class Model_app extends CI_model{
         $this->db->limit($dari, $baris);
         return $this->db->get();
     }
-    
+
     public function view_join_row($table1,$table2,$field,$order,$ordering){
        $this->db->select('*');
        $this->db->from($table1);
@@ -219,7 +219,16 @@ class Model_app extends CI_model{
          $this->db->limit($dari, $baris);
          return $this->db->get()->result();
      }
-     
+     public function view_join_one_limit_publish($table1,$table2,$field,$status,$order,$ordering,$baris,$dari){
+           $this->db->select('*');
+           $this->db->from($table1);
+           $this->db->join($table2, $table1.'.'.$field.'='.$table2.'.'.$field);
+           $this->db->where($status,'Y');
+           $this->db->order_by($order,$ordering);
+           $this->db->limit($dari, $baris);
+           return $this->db->get()->result();
+       }
+
      public function view_join_three_limit($table1,$table2,$table4,$table3,$field,$field2,$kabupaten,$id_kabupaten,$order,$ordering,$baris,$dari){
          $this->db->select('*');
          $this->db->from($table1);
@@ -255,11 +264,11 @@ class Model_app extends CI_model{
       {
         $this->db->select('*');
         $this->db->from($this->table_users_bisnis);
-        $this->db->join($this->table_harga, $this->table_users_bisnis.'.'.$this->id_harga.'='.$this->table_harga.'.'.$this->id_harga);  
+        $this->db->join($this->table_harga, $this->table_users_bisnis.'.'.$this->id_harga.'='.$this->table_harga.'.'.$this->id_harga);
         $this->db->join($this->table_kategori, $this->table_users_bisnis.'.'.$this->id_kategori.'='.$this->table_kategori.'.'.$this->id_kategori);
         $this->db->join($this->kabupaten, $this->table_users_bisnis.'.'.$this->kabupaten.'='.$this->kabupaten.'.'.$this->id_kabupaten);
         $this->db->join($this->table_kecamatan, $this->table_users_bisnis.'.'.$this->kecamatan.'='.$this->table_kecamatan.'.'.$this->id_kecamatan);
-        $this->db->join($this->table_user, $this->table_users_bisnis.'.'.$this->uname.'='.$this->table_user.'.'.$this->uname); 
+        $this->db->join($this->table_user, $this->table_users_bisnis.'.'.$this->uname.'='.$this->table_user.'.'.$this->uname);
         $this->db->where($this->id_bisnis, $id);
         $this->db->or_where('namabisnis_seo', $id);
         return $this->db->get()->row();
@@ -272,12 +281,12 @@ class Model_app extends CI_model{
         $this->db->where($this->id_projek, $id);
         $this->db->or_where('judul_seo', $id);
         $this->db->join($this->table_kategori, $this->table_users_bisnis.'.'.$this->id_kategori.'='.$this->table_kategori.'.'.$this->id_kategori);
-        $this->db->join($this->table_user, $this->table_users_bisnis.'.'.$this->uname.'='.$this->table_user.'.'.$this->uname); 
+        $this->db->join($this->table_user, $this->table_users_bisnis.'.'.$this->uname.'='.$this->table_user.'.'.$this->uname);
         $this->db->join($this->kabupaten, $this->table_users_bisnis.'.'.$this->kabupaten.'='.$this->kabupaten.'.'.$this->id_kabupaten);
         $this->db->join($this->table_kecamatan, $this->table_users_bisnis.'.'.$this->kecamatan.'='.$this->table_kecamatan.'.'.$this->id_kecamatan);
         return $this->db->get()->row();
       }
-      
+
       function get_by_id_harga($id)
       {
         $this->db->select('*');
@@ -285,7 +294,7 @@ class Model_app extends CI_model{
         $this->db->join($this->table_users_bisnis, $this->table_harga.'.'.$this->uname.'='.$this->table_users_bisnis.'.'.$this->uname);
         $this->db->where('judul_seo', $id);
         $this->db->join($this->table_kategori, $this->table_users_bisnis.'.'.$this->id_kategori.'='.$this->table_kategori.'.'.$this->id_kategori);
-        $this->db->join($this->table_user, $this->table_users_bisnis.'.'.$this->uname.'='.$this->table_user.'.'.$this->uname); 
+        $this->db->join($this->table_user, $this->table_users_bisnis.'.'.$this->uname.'='.$this->table_user.'.'.$this->uname);
         $this->db->join($this->kabupaten, $this->table_users_bisnis.'.'.$this->kabupaten.'='.$this->kabupaten.'.'.$this->id_kabupaten);
         $this->db->join($this->table_kecamatan, $this->table_users_bisnis.'.'.$this->kecamatan.'='.$this->table_kecamatan.'.'.$this->id_kecamatan);
         return $this->db->get()->row();
@@ -320,7 +329,7 @@ class Model_app extends CI_model{
                 $this->db->or_where('judul_seo', $id);
                 return $this->db->get($this->table_blogs)->row();
               }
-              
+
     function update_counter_undangan($id)
     {
         //return current article views
@@ -331,7 +340,7 @@ class Model_app extends CI_model{
         $this->db->set('views', ($count->views + 1));
         $this->db->update('undangan_tbl');
     }
-    
-   
+
+
 
 }
