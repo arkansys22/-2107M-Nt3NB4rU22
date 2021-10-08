@@ -66,13 +66,13 @@
                     <?php } ?>
                   </ul>
                 </li>
-                <li><?php $jmlaa = $this->model_app->view('blogs_tbl')->num_rows(); ?>
+                <!-- <li><?php $jmlaa = $this->model_app->view('blogs_tbl')->num_rows(); ?>
                 <a class="cat-drop" href="#">Artikel<span class="fr">(<?php echo $jmlaa; ?>)</span></a>
                   <ul>
                     <li><a href="<?php echo base_url()?>artikel/kategori/tips-hubungan">Tips Hubungan</a></li>
                     <li><a href="<?php echo base_url()?>artikel/kategori/inspirasi-pernikahan">Inspirasi Pernikahan</a></li>
                   </ul>
-                </li>
+                </li> -->
               </ul>
             </div>
 

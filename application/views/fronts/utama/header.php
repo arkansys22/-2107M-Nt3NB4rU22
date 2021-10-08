@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-        
+
 
             </div>
         </div>
@@ -28,12 +28,12 @@
                     <?php } ?>
           </ul>
         </li>
-        <li class="type-1"><a href="#">Artikel<span class="fa fa-angle-down"></span></a>
+        <!-- <li class="type-1"><a href="#">Artikel<span class="fa fa-angle-down"></span></a>
           <ul class="dropmenu">
             <li><a href="<?php echo base_url()?>artikel/kategori/tips-hubungan">Tips Hubungan</a></li>
             <li><a href="<?php echo base_url()?>artikel/kategori/inspirasi-pernikahan">Inspirasi Pernikahan</a></li>
           </ul>
-        </li>
+        </li> -->
         <li class="type-1"><a href="#">Akses Pengguna<span class="fa fa-angle-down"></span></a>
           <ul class="dropmenu">
             <li><a href="<?php echo base_url()?>login">Masuk</a></li>

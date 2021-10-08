@@ -5,8 +5,8 @@ class Artikel extends CI_Controller {
 	public function all()
 		{
 			/* memanggil model untuk ditampilkan pada masing2 modul*/
-		$this->load->model('Berita_model');
-		$jumlah= $this->model_app->view_join_row('blogs_tbl','kategori_blogs','id_kategori','id_berita','DESC');
+			$this->load->model('Berita_model');
+			$jumlah= $this->model_app->view_join_row('blogs_tbl','kategori_blogs','id_kategori','id_berita','DESC');
 
 			$config['base_url'] = base_url().'artikel/all/page/';
 			$config['total_rows'] = $jumlah;
@@ -50,7 +50,7 @@ class Artikel extends CI_Controller {
 			$this->pagination->initialize($config);
 			$this->load->view('fronts/artikel/v', $this->data);
 		}
-		public function kategori()
+	public function kategori()
 		{
 			$query = $this->model_utama->view_where('kategori_blogs',array('kategori_seo' => $this->uri->segment(3)));
 			if ($query->num_rows()<=0){
@@ -102,8 +102,8 @@ class Artikel extends CI_Controller {
 			}
 		}
 
-		public function read($id)
-    	{
+	public function read($id)
+    {
     		$this->data['title'] = "Portal Berita CI";
 
         $cap = $this->buat_captcha();
@@ -128,7 +128,7 @@ class Artikel extends CI_Controller {
 
 
 
-		public function buat_captcha()
+	public function buat_captcha()
 	  {
 	    /* memanggil helper captcha dan string */
 	    $this->load->helper('captcha');
@@ -158,7 +158,7 @@ class Artikel extends CI_Controller {
 	    return $cap;
 	  }
 
-		function add_count($id)
+	function add_count($id)
  {
 		 // load cookie helper
 		 $this->load->helper('cookie');

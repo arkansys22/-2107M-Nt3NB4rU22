@@ -2,8 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Vendors extends CI_Controller {
 
-	public function all()
-		{
+public function all()
+	{
 
 		$jumlah= $this->model_app->view_join_row('users_bisnis','kategori','id_kategori','id_bisnis','ASC');
 
@@ -50,9 +50,8 @@ class Vendors extends CI_Controller {
 			$this->pagination->initialize($config);
 			$this->load->view('fronts/vendors/v', $this->data);
 		}
-
-	public function read($id)
-    	{
+public function read($id)
+  {
             $cap = $this->buat_captcha();
             $this->data['cap_img'] = $cap['image'];
             $this->session->set_userdata('kode_captcha', $cap['word']);
@@ -80,8 +79,8 @@ class Vendors extends CI_Controller {
               redirect(base_url());
             }
     	}
-	public function readprojek($id)
-    	{
+public function readprojek($id)
+  {
             $cap = $this->buat_captcha();
             $this->data['cap_img'] = $cap['image'];
             $this->session->set_userdata('kode_captcha', $cap['word']);
@@ -108,9 +107,8 @@ class Vendors extends CI_Controller {
               redirect(base_url());
             }
     	}
-
-    	public function readharga($id)
-    	{
+public function readharga($id)
+  {
             $cap = $this->buat_captcha();
             $this->data['cap_img'] = $cap['image'];
             $this->session->set_userdata('kode_captcha', $cap['word']);
@@ -136,9 +134,8 @@ class Vendors extends CI_Controller {
               redirect(base_url());
             }
     	}
-
-		public function kategori()
-		{
+public function kategori()
+	{
 			$query = $this->model_utama->view_where('kategori',array('kategori_seo' => $this->uri->segment(3)));
 			if ($query->num_rows()<=0){
 				redirect('main');
@@ -193,8 +190,8 @@ class Vendors extends CI_Controller {
 		}
 
 
-		public function buat_captcha()
-	  {
+public function buat_captcha()
+ {
 	    /* memanggil helper captcha dan string */
 	    $this->load->helper('captcha');
 
@@ -223,7 +220,7 @@ class Vendors extends CI_Controller {
 	    return $cap;
 	  }
 
-		function add_count_projek($id)
+function add_count_projek($id)
  {
 		 // load cookie helper
 		 $this->load->helper('cookie');
@@ -242,7 +239,7 @@ class Vendors extends CI_Controller {
 		 }
  }
 
- 		function add_count_vendor($id)
+function add_count_vendor($id)
  {
 		 // load cookie helper
 		 $this->load->helper('cookie');
@@ -260,8 +257,7 @@ class Vendors extends CI_Controller {
 				 $this->Berita_model->update_counter_vendors(urldecode($id));
 		 }
  }
-
-	function add_count_harga($id)
+function add_count_harga($id)
  {
 		 // load cookie helper
 		 $this->load->helper('cookie');
